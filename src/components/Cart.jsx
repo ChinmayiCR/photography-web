@@ -3,11 +3,21 @@ import {NavBar} from "./index.js";
 import styles from "../style.js";
 import {CartContext} from "../context/CartContextProvider.jsx";
 import {useNavigate} from "react-router-dom";
+import {resolveAssetImage} from "../assets/index.js";
 
 const Cart = () => {
-    const {cart, } = useContext(CartContext);
-    const totalPrice = cart.reduce((sum, item) => sum + item.price, 0);
+    const {cart, dispatch} = useContext(CartContext);
+    const totalPrice = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+    const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
     const navigate = useNavigate();
+
+    const handleIncrement = (id) => {
+        dispatch({type: "Increment", id});
+    };
+
+    const handleDecrement = (id) => {
+        dispatch({type: "Decrement", id});
+    };
 
     const handleClick = () => {
         navigate("/details"); // redirect to /about
@@ -22,26 +32,38 @@ const Cart = () => {
                     <div>
                         <div className={`w-full`}>
                             {cart.map((img) => (
-                                <ul className={`grid sm:grid-cols-12 grid-cols-2 text-white font-sans gap-6 ${styles.paddingY}`}>
-                                    <li key={img.id}
+                                <ul key={img.id} className={`grid sm:grid-cols-12 grid-cols-2 items-center text-white font-sans gap-6 ${styles.paddingY}`}>
+                                    <li
                                         className={`sm:col-span-2`}>
-                                        <img src={img.link} alt={img.title}/>
+                                        <img src={resolveAssetImage(img.link)} alt={img.title}/>
                                     </li>
-                                    <li key={img.title}
+                                    <li
                                         className={`sm:col-span-6`}>
                                         {img.title}
                                     </li>
-                                    <li key={img.quantity}
-                                        className={`sm:col-span-2`}>
-                                        <div className="flex flex-col items-center gap-4">
-                                            <div className="flex gap-2 cursor-pointer">
-                                                <text className="text-xl px-4">{img.quantity}</text>
-                                            </div>
+                                    <li
+                                        className={`sm:col-span-2 flex items-center justify-center`}>
+                                        <div className="flex items-center gap-2">
+                                            <button
+                                                type="button"
+                                                className="text-xl px-3 py-1 border border-white rounded hover:bg-white hover:text-primary cursor-pointer"
+                                                onClick={() => handleDecrement(img.id)}
+                                            >
+                                                -
+                                            </button>
+                                            <text className="text-xl px-2 min-w-[1.5rem] text-center">{img.quantity}</text>
+                                            <button
+                                                type="button"
+                                                className="text-xl px-3 py-1 border border-white rounded hover:bg-white hover:text-primary cursor-pointer"
+                                                onClick={() => handleIncrement(img.id)}
+                                            >
+                                                +
+                                            </button>
                                         </div>
                                     </li>
-                                    <li key={img.price}
-                                        className={`sm:col-span-2`}>
-                                        ${img.price}
+                                    <li
+                                        className={`sm:col-span-2 flex items-center justify-center`}>
+                                        <text className="text-xl">${img.price}</text>
                                     </li>
                                 </ul>
                                 )
@@ -50,7 +72,7 @@ const Cart = () => {
                         <div className={`flex flex-col`}>
                             <div>
                                 <ul className={`list-none text-white font-sans gap-6 grid sm:grid-cols-12 grid-cols-2`}>
-                                    <li className={`sm:col-start-9 sm:col-span-2 text-2xl`}>Subtotal: {cart.length}</li>
+                                    <li className={`sm:col-start-9 sm:col-span-2 text-2xl`}>Subtotal: {totalItems}</li>
                                     <li className={`sm:col-start-11 sm:col-span-2 text-2xl`}>Sum: ${totalPrice}</li>
                                 </ul>
                             </div>

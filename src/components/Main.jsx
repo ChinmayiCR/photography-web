@@ -1,6 +1,5 @@
 import React from 'react';
 import {content, heading, makers} from "../constants/index.js";
-// import styles from '../style.js';
 
 const Main = () => (
     <section id="home" className={`flex md:flex-row flex-col justify-center relative`}>

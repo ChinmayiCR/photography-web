@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import {instagram, whatsapp, email, facebook, map} from "../assets/index.js";
+import {sendQueryEmail} from "../api/sendmailapi.jsx";
 
 const Contact = () => {
     const [formData, setFormData] = useState({
@@ -8,13 +9,38 @@ const Contact = () => {
         phone: "",
         message: "",
     });
+    const [status, setStatus] = useState("");
+    const [isSending, setIsSending] = useState(false);
 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
+        setIsSending(true);
+        setStatus("Sending...");
+
+        try {
+            await sendQueryEmail({
+                sender: formData.email,
+                senderName: formData.name,
+                senderPhone: formData.phone,
+                message: formData.message,
+            });
+            setStatus("Message sent successfully!");
+            setFormData({
+                name: "",
+                email: "",
+                phone: "",
+                message: "",
+            });
+        } catch (error) {
+            console.error("Error sending contact message:", error);
+            setStatus("Failed to send message. Please try again.");
+        } finally {
+            setIsSending(false);
+        }
     };
 
     const phoneNumber = "919901558949";
@@ -92,6 +118,7 @@ const Contact = () => {
                             placeholder="example@gmail.com"
                             value={formData.email}
                             onChange={handleChange}
+                            required
                             className="w-full border border-gray-300 rounded-md px-3 py-2 focus:ring-2 focus:ring-amber-50 outline-none"
                         />
                     </div>
@@ -126,10 +153,12 @@ const Contact = () => {
 
                     <button
                         type="submit"
+                        disabled={isSending}
                         className="bg-primary text-black font-semibold px-5 py-2 rounded-md hover:bg-primary transition"
                     >
-                        Send Message
+                        {isSending ? "Sending..." : "Send Message"}
                     </button>
+                    {status && <p className="text-sm font-light">{status}</p>}
                 </form>
             </div>
         </div>

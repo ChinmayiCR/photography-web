@@ -7,7 +7,7 @@ const App = () => {
     useEffect(() => {
         const timer = setTimeout(() => {
             setShowLogo(false);
-        }, 3000); // 3 seconds
+        }, 1000); // 2 seconds
         return () => clearTimeout(timer);
     }, []);
 

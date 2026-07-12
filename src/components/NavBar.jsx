@@ -47,10 +47,10 @@ const NavBar = () => {
                 <Link to={"/"}><text className={`font-sans text-white`}>EyeShade photography</text></Link>
             </div>
 
-            <Link to={"/cart"}>
+            <Link to={"/cart"} className="flex items-center">
                 <img src={cartIcon} alt="cart" className="w-[30px] h-[30px] filter invert"/>
+                <text className="text-white min-w-[1.5rem] px-2 text-center">{cart.length}</text>
             </Link>
-            <text className={`text-white px-2`}>{cart.length}</text>
 
         </nav>
     );

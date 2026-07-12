@@ -13,6 +13,14 @@ import facebook from "../assets/facebook.png";
 import map from "../assets/map.png";
 import logo1 from "../assets/logo.png"
 
+const imageAssets = {
+  image1,
+  image2,
+  image3,
+};
+
+const resolveAssetImage = (link) => imageAssets[link] || link;
+
 export {
   background,
   menu,
@@ -27,5 +35,7 @@ export {
   email,
   facebook,
   map,
-    logo1
+    logo1,
+  imageAssets,
+  resolveAssetImage
 };

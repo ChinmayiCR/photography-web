@@ -28,7 +28,7 @@ const Details = () => {
         setStatus("Sending...");
 
         try {
-            const result = await sendEmail({ emailJsonBody});
+            const result = await sendEmail(emailJsonBody);
             console.log("Email sent:", result);
             setStatus("Email sent successfully!");
         } catch (error) {
