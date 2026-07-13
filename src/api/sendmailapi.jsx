@@ -1,6 +1,8 @@
+import {apiBaseUrl} from "./config.js";
+
 export async function sendEmail(body) {
     try {
-        const response = await fetch("https://localhost:8443/email/send", {
+        const response = await fetch(`${apiBaseUrl}/email/send`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -21,7 +23,7 @@ export async function sendEmail(body) {
 
 export async function sendQueryEmail(body) {
     try {
-        const response = await fetch("https://localhost:8443/email/query", {
+        const response = await fetch(`${apiBaseUrl}/email/query`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

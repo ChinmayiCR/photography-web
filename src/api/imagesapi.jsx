@@ -1,4 +1,6 @@
-const imagesApiUrl = import.meta.env.VITE_IMAGES_API_URL || "https://localhost:8443/user/images";
+import {apiBaseUrl} from "./config.js";
+
+const imagesApiUrl = `${apiBaseUrl}/user/images`;
 
 export async function fetchImages() {
     const response = await fetch(imagesApiUrl);
