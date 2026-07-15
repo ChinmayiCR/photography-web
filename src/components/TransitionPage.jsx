@@ -3,13 +3,13 @@ import {logo1} from "../assets/index.js";
 
 const TransitionPage = () => {
     return (
-        <div className="flex flex-col justify-center items-center h-screen">
+        <div className="flex h-screen flex-col items-center justify-center bg-paper">
             <img
                 src={logo1}
                 alt="Logo"
-                className="w-[110px] h-[110px] filter invert"
+                className="h-[110px] w-[110px]"
             />
-            <text className={`text-lg text-white font-sans`}>EyeShade Photography</text>
+            <span className="font-sans text-lg font-bold text-ink">iKON Elevators</span>
         </div>
     );
 };

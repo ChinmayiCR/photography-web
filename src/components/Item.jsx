@@ -11,22 +11,22 @@ const Item = () => {
     const image = images.find((img) => String(img.id) === imageId);
     const {dispatch} = useContext(CartContext);
     return (
-        <div className={`bg-black sm:px-16 px-6`}>
-            <div id="image">
+        <div className="min-h-screen bg-paper px-5 text-ink sm:px-10 lg:px-16">
+            <div id="image" className={`${styles.boxWidth}`}>
                 <NavBar/>
-                <div className={`grid sm:grid-cols-12 grid-cols-4 gap-6 ${styles.paddingY}`}>
-                    <div className="text-white text-4xl sm:col-span-4 col-span-4 flex flex-col space-y-8">
-                        <div className="font-thin text-sm">{`images >> ${imageId}`}</div>
-                        <img src={resolveAssetImage(image.link)} alt="photo"/>
+                <div className={`grid grid-cols-4 gap-8 ${styles.paddingY} sm:grid-cols-12`}>
+                    <div className="col-span-4 flex flex-col space-y-6 text-4xl sm:col-span-5">
+                        <div className="text-sm font-semibold text-muted">{`images >> ${imageId}`}</div>
+                        <img src={resolveAssetImage(image.link)} alt="photo" className="h-[520px] w-full rounded-lg object-cover shadow-xl shadow-neutral-200"/>
                     </div>
-                    <div className="text-white flex flex-col justify-start p-10 m-6 sm:col-span-8 col-span-4 mt-10 space-y-4 list-none">
-                        <li className="text-4xl">{image.title}</li>
-                        <li className="text-lg font-thin italic">{image.content}</li>
-                        <li>{image.price}</li>
+                    <div className="col-span-4 mt-4 flex list-none flex-col justify-start space-y-5 rounded-lg border border-neutral-200 bg-white p-8 shadow-sm sm:col-span-7 sm:mt-10">
+                        <li className="text-4xl font-extrabold text-ink">{image.title}</li>
+                        <li className="text-lg leading-8 text-muted">{image.content}</li>
+                        <li className="text-xl font-bold text-yellow-700">{image.price}</li>
                         <button
                             onClick={ () => dispatch({type:"Add", image: image})}
                             type="submit"
-                            className="text-black font-semibold px-5 py-2 rounded-md hover:bg-primary transition"
+                            className="w-fit rounded-md bg-primary px-5 py-2 font-bold text-ink transition hover:bg-yellow-500"
                         >Add to Cart</button>
                     </div>
                 </div>

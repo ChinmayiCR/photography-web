@@ -38,15 +38,15 @@ const Details = () => {
     };
 
     return (
-        <div className={`bg-primary min-h-screen`}>
-            <div id="details" className="w-full py-10 px-6 md:px-20 justify-between rounded-lg ">
+        <div className="min-h-screen bg-paper text-ink">
+            <div id="details" className="mx-auto w-full max-w-[1180px] justify-between rounded-lg px-5 py-10 sm:px-10 lg:px-16">
                 <NavBar/>
-                <div className="flex-1 bg-primary rounded-lg shadow-md shadow-white p-6 border-white text-white font-sans">
-                    <h3 className="text-xl font-semibold text-white mb-6">Send Us Your Details</h3>
+                <div className="mt-8 flex-1 rounded-lg border border-neutral-200 bg-white p-6 font-sans text-ink shadow-xl shadow-neutral-200">
+                    <h3 className="mb-6 text-xl font-bold text-ink">Send Us Your Details</h3>
 
                     <form onSubmit={handleMailSubmit} className="space-y-5">
                         <div>
-                            <label className="block text-sm font-medium mb-1">Full Name*</label>
+                            <label className="mb-1 block text-sm font-semibold text-neutral-700">Full Name*</label>
                             <input
                                 type="text"
                                 name="name"
@@ -54,12 +54,12 @@ const Details = () => {
                                 value={senderName}
                                 onChange={(e) => setSenderName(e.target.value)}
                                 required
-                                className="w-full border border-gray-300 rounded-md px-3 py-2 focus:ring-2 focus:ring-amber-50 outline-none"
+                                className="w-full rounded-md border border-neutral-300 bg-white px-3 py-2 text-ink outline-none focus:border-yellow-400 focus:ring-2 focus:ring-yellow-100"
                             />
                         </div>
 
                         <div>
-                            <label className="block text-sm font-medium mb-1">Email*</label>
+                            <label className="mb-1 block text-sm font-semibold text-neutral-700">Email*</label>
                             <input
                                 type="email"
                                 name="email"
@@ -67,12 +67,12 @@ const Details = () => {
                                 value={sender}
                                 onChange={(e) => setSender(e.target.value)}
                                 required
-                                className="w-full border border-gray-300 rounded-md px-3 py-2 focus:ring-2 focus:ring-amber-50 outline-none"
+                                className="w-full rounded-md border border-neutral-300 bg-white px-3 py-2 text-ink outline-none focus:border-yellow-400 focus:ring-2 focus:ring-yellow-100"
                             />
                         </div>
 
                         <div>
-                            <label className="block text-sm font-medium mb-1">Phone*</label>
+                            <label className="mb-1 block text-sm font-semibold text-neutral-700">Phone*</label>
                             <input
                                 type="tel"
                                 name="phone"
@@ -80,18 +80,17 @@ const Details = () => {
                                 value={senderPhone}
                                 onChange={(e) => setSenderPhone(e.target.value)}
                                 required
-                                className="w-full border border-gray-300 rounded-md px-3 py-2 focus:ring-2 focus:ring-amber-50 outline-none"
+                                className="w-full rounded-md border border-neutral-300 bg-white px-3 py-2 text-ink outline-none focus:border-yellow-400 focus:ring-2 focus:ring-yellow-100"
                             />
                         </div>
 
                         <div>
-                            <label className="block text-md mb-1">Your Order</label>
+                            <label className="mb-1 block text-md font-semibold text-neutral-700">Your Order</label>
                             <div >
                                 <ol className="list-decimal list-inside">
                                     {cart.map((crt, ) => (
                                             <li key={crt.title}
-                                                className={`font-sans cursor-pointer text-[16px] 
-                            text-white `}>
+                                                className="cursor-pointer font-sans text-[16px] text-muted">
                                                 {crt.title}
                                             </li>
                                         )
@@ -102,12 +101,12 @@ const Details = () => {
                         </div>
 
                         <div>
-                            <label className="block text-md mb-1">Your total price:${totalPrice}</label>
+                            <label className="mb-1 block text-md font-bold text-ink">Your total price:${totalPrice}</label>
                         </div>
 
                         <button
                             type="submit"
-                            className="bg-primary text-black font-semibold px-5 py-2 rounded-md hover:bg-primary transition"
+                            className="rounded-md bg-primary px-5 py-2 font-bold text-ink transition hover:bg-yellow-500"
                         >
                             Confirm Order
                         </button>

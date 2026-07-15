@@ -24,21 +24,21 @@ const Cart = () => {
     };
 
     return (
-        <div className={`bg-primary ${styles.paddingX} ${styles.flexCenter} min-h-screen`}>
-            <div id="cart">
+        <div className={`min-h-screen bg-paper text-ink ${styles.paddingX} ${styles.flexCenter}`}>
+            <div id="cart" className={`${styles.boxWidth}`}>
                 <NavBar/>
                 <div className={`${styles.paddingY}`}>
-                    <text className={`text-white font-sans text-2xl`}>Shopping Cart</text>
+                    <h1 className="font-sans text-3xl font-extrabold text-ink">Shopping Cart</h1>
                     <div>
-                        <div className={`w-full`}>
+                        <div className="mt-8 w-full space-y-4">
                             {cart.map((img) => (
-                                <ul key={img.id} className={`grid sm:grid-cols-12 grid-cols-2 items-center text-white font-sans gap-6 ${styles.paddingY}`}>
+                                <ul key={img.id} className="grid grid-cols-2 items-center gap-6 rounded-lg border border-neutral-200 bg-white p-4 font-sans text-ink shadow-sm sm:grid-cols-12">
                                     <li
-                                        className={`sm:col-span-2`}>
-                                        <img src={resolveAssetImage(img.link)} alt={img.title}/>
+                                        className="sm:col-span-2">
+                                        <img src={resolveAssetImage(img.link)} alt={img.title} className="h-28 w-full rounded-md object-cover"/>
                                     </li>
                                     <li
-                                        className={`sm:col-span-6`}>
+                                        className="font-semibold sm:col-span-6">
                                         {img.title}
                                     </li>
                                     <li
@@ -46,15 +46,15 @@ const Cart = () => {
                                         <div className="flex items-center gap-2">
                                             <button
                                                 type="button"
-                                                className="text-xl px-3 py-1 border border-white rounded hover:bg-white hover:text-primary cursor-pointer"
+                                                className="cursor-pointer rounded border border-neutral-300 bg-white px-3 py-1 text-xl text-ink hover:border-yellow-400 hover:bg-yellow-50"
                                                 onClick={() => handleDecrement(img.id)}
                                             >
                                                 -
                                             </button>
-                                            <text className="text-xl px-2 min-w-[1.5rem] text-center">{img.quantity}</text>
+                                            <span className="min-w-[1.5rem] px-2 text-center text-xl font-bold">{img.quantity}</span>
                                             <button
                                                 type="button"
-                                                className="text-xl px-3 py-1 border border-white rounded hover:bg-white hover:text-primary cursor-pointer"
+                                                className="cursor-pointer rounded border border-neutral-300 bg-white px-3 py-1 text-xl text-ink hover:border-yellow-400 hover:bg-yellow-50"
                                                 onClick={() => handleIncrement(img.id)}
                                             >
                                                 +
@@ -63,7 +63,7 @@ const Cart = () => {
                                     </li>
                                     <li
                                         className={`sm:col-span-2 flex items-center justify-center`}>
-                                        <text className="text-xl">${img.price}</text>
+                                        <span className="text-xl font-bold text-yellow-700">${img.price}</span>
                                     </li>
                                 </ul>
                                 )
@@ -71,15 +71,15 @@ const Cart = () => {
                         </div>
                         <div className={`flex flex-col`}>
                             <div>
-                                <ul className={`list-none text-white font-sans gap-6 grid sm:grid-cols-12 grid-cols-2`}>
-                                    <li className={`sm:col-start-9 sm:col-span-2 text-2xl`}>Subtotal: {totalItems}</li>
-                                    <li className={`sm:col-start-11 sm:col-span-2 text-2xl`}>Sum: ${totalPrice}</li>
+                                <ul className="mt-8 grid list-none grid-cols-2 gap-6 rounded-lg border border-neutral-200 bg-white p-5 font-sans text-ink shadow-sm sm:grid-cols-12">
+                                    <li className="text-xl font-bold sm:col-start-9 sm:col-span-2">Subtotal: {totalItems}</li>
+                                    <li className="text-xl font-bold sm:col-start-11 sm:col-span-2">Sum: ${totalPrice}</li>
                                 </ul>
                             </div>
                             <div className={`grid sm:grid-cols-4 ${styles.marginY}`}>
                                 <button
                                     type="submit"
-                                    className="text-black font-semibold hover:bg-primary sm:col-start-3 sm:col-span-2"
+                                    className="font-bold text-ink hover:bg-yellow-500 sm:col-start-3 sm:col-span-2"
                                     onClick={handleClick}
                                 >Checkout</button>
                             </div>

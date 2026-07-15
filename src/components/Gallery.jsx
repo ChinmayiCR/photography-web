@@ -37,7 +37,7 @@ const Gallery = () => {
 
     if (status === "loading") {
         return (
-            <div id="gallery" className="max-w-6xl mx-auto px-8 pt-20 pb-12 font-sans text-white">
+            <div id="gallery" className="mx-auto max-w-6xl px-0 py-12 font-sans text-muted">
                 Loading gallery...
             </div>
         );
@@ -45,26 +45,26 @@ const Gallery = () => {
 
     if (status === "error") {
         return (
-            <div id="gallery" className="max-w-6xl mx-auto px-8 pt-20 pb-12 font-sans text-white">
+            <div id="gallery" className="mx-auto max-w-6xl px-0 py-12 font-sans text-muted">
                 Unable to load gallery.
             </div>
         );
     }
 
     return (
-        <div id="gallery" className="max-w-6xl mx-auto px-8 pt-20 pb-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12 font-sans text-white">
+        <div id="gallery" className="mx-auto grid max-w-6xl grid-cols-1 gap-7 py-8 font-sans text-ink sm:grid-cols-2 md:grid-cols-3">
             {images.map((image) => (
-                <div key={image.id} className="flex flex-col items-start">
-                        <Link to={`/item/${image.id}`}>
+                <div key={image.id} className="flex flex-col items-start rounded-lg border border-neutral-200 bg-white p-3 shadow-sm transition duration-200 hover:-translate-y-1 hover:shadow-xl">
+                        <Link to={`/item/${image.id}`} className="block w-full">
                             <img
                                 src={resolveAssetImage(image.link)}
                                 alt={image.id}
-                                className="w-full h-[500px] object-cover rounded-lg"
+                                className="h-[420px] w-full rounded-lg object-cover"
                             />
                         </Link>
-                        <Link to={`/item/${image.id}`}><h3 className="mt-4 text-lg">{image.title}</h3></Link>
+                        <Link to={`/item/${image.id}`}><h3 className="mt-4 text-lg font-bold text-ink">{image.title}</h3></Link>
                         <Link to={`/item/${image.id}`}>
-                            <p className="text-sm font-light">{image.price}</p>
+                            <p className="text-sm font-semibold text-yellow-700">{image.price}</p>
                         </Link>
 
                 </div>

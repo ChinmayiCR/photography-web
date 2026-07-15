@@ -1,14 +1,13 @@
 @import "tailwindcss";
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lobster&family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: black;
+  color-scheme: light;
+  color: #1f2937;
+  background-color: #f8fafc;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -18,14 +17,17 @@
 
 a {
   font-weight: 500;
+  color: inherit;
   text-decoration: inherit;
 }
 
 body {
   margin: 0;
   padding:0;
-  height: inherit;
-  background-color: black;
+  min-width: 320px;
+  min-height: 100vh;
+  background:
+    linear-gradient(180deg, #ffffff 0%, #f8fafc 46%, #f3f4f6 100%);
 }
 
 h1 {
@@ -35,41 +37,46 @@ h1 {
 
 button {
   border-radius: 8px;
-  border: 1px solid white;
+  border: 1px solid #facc15;
   padding: 0.6em 1.2em;
   font-size: 1em;
-  font-weight: 500;
+  font-weight: 700;
   font-family: inherit;
-  background-color: #202020;
+  background-color: #facc15;
   cursor: pointer;
-  transition: border-color 0.25s;
-  color: white;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+  color: #111827;
 }
 .button-special:hover{
-  font-size: 20px;
+  color: #ca8a04;
 }
 button:hover {
-  background: white;
-  color: #202020;
+  background: #eab308;
+  border-color: #eab308;
+  color: #111827;
 
 }
 button:focus,
 button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  outline: 3px solid rgba(250, 204, 21, 0.45);
+  outline-offset: 2px;
 }
 
 @media (prefers-color-scheme: light) {
   :root {
-    color: #213547;
-    background-color: #ffffff;
+    color: #1f2937;
+    background-color: #f8fafc;
   }
   button {
-    background-color: #202020;
+    background-color: #facc15;
   }
 }
 
 @theme{
-  --color-primary: #202020;
+  --color-primary: #facc15;
+  --color-ink: #111827;
+  --color-muted: #4b5563;
+  --color-paper: #f8fafc;
   --color-white: #FFFFFF;
 }
 

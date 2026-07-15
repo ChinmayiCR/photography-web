@@ -2,46 +2,46 @@ import React from 'react';
 import {subStyleVideo, subStylePhoto} from "../constants/index.js";
 import {image1} from "../assets/index.js";
 
-const titleClassName = "block w-full text-xl sm:text-2xl";
+const titleClassName = "block w-full text-lg font-bold text-ink sm:text-xl";
 const contentClassName =
-    "block w-full mt-2 sm:mt-3 text-base sm:text-lg md:text-xl font-light leading-relaxed sm:leading-loose";
+    "mt-2 block w-full text-base leading-7 text-muted";
 const styleListClassName =
-    "w-full text-xl sm:text-2xl text-white list-none p-0 m-0";
-const featureSectionClassName = "my-8 sm:my-16 flex flex-col gap-4 sm:gap-8 w-full";
-const imageBlockClassName = "text-white text-2xl sm:text-4xl flex flex-col space-y-4 sm:space-y-8 w-full";
+    "grid w-full list-none gap-4 p-0 m-0";
+const featureSectionClassName = "my-10 grid w-full items-center gap-8 md:grid-cols-2 sm:my-16";
+const imageBlockClassName = "flex w-full flex-col space-y-4 text-2xl font-bold text-ink sm:text-4xl";
 
 const Features = () => {
     return (
         <div className="font-sans w-full">
             <div className="flex justify-center text-center w-full">
-                <text className="text-white w-full max-w-[400px] text-3xl sm:text-5xl md:text-6xl leading-tight sm:leading-normal">
+                <h2 className="w-full max-w-[620px] text-4xl font-extrabold leading-tight text-ink sm:text-5xl md:text-6xl">
                     Customize to your needs
-                </text>
+                </h2>
             </div>
             <div className={featureSectionClassName}>
                 <div className={imageBlockClassName}>
                     <div>Photo</div>
-                    <img src={image1} alt="photo" className="w-full h-auto"/>
+                    <img src={image1} alt="photo" className="h-[420px] w-full rounded-lg object-cover shadow-xl shadow-neutral-200"/>
                 </div>
                 <ul className={styleListClassName}>
                     {subStylePhoto.map((style) => (
                         <li key={style.id}
-                            className="font-normal py-3 sm:py-4 w-full">
+                            className="w-full rounded-lg border border-neutral-200 bg-white p-6 shadow-sm">
                             <a href={`#${style.id}`} className={titleClassName}>{style.title}</a>
                             <span className={contentClassName}>{style.content}</span>
                         </li>
                     ))}
                 </ul>
             </div>
-            <div className={featureSectionClassName}>
+            <div className={`${featureSectionClassName} md:[&>*:first-child]:order-2`}>
                 <div className={imageBlockClassName}>
                     <div>Video</div>
-                    <img src={image1} alt="photo" className="w-full h-auto"/>
+                    <img src={image1} alt="photo" className="h-[420px] w-full rounded-lg object-cover shadow-xl shadow-neutral-200"/>
                 </div>
                 <ul className={styleListClassName}>
                     {subStyleVideo.map((style) => (
                         <li key={style.id}
-                            className="font-normal py-3 sm:py-4 w-full">
+                            className="w-full rounded-lg border border-neutral-200 bg-white p-6 shadow-sm">
                             <a href={`#${style.id}`} className={titleClassName}>{style.title}</a>
                             <span className={contentClassName}>{style.content}</span>
                         </li>

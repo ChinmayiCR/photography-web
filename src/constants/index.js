@@ -101,6 +101,6 @@ export const subStyleVideo = [
 ];
 export const content = "The word Photography literally means ‘drawing with light’, which derives from the Greek photo, meaning light and graph, meaning to draw."
 
-export const heading = "make your day special";
+export const heading = "Welcome to the Future of VERTICAL MOTION";
 
-export const makers = "photos and videos by abc";
+export const makers = "Welcome to the Future of VERTICAL MOTION";

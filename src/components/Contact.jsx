@@ -48,11 +48,11 @@ const Contact = () => {
 
     const url = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${message}`;
     return (
-        <div id="contactus" className="w-full bg-primary pt-20 pb-12  px-6 md:px-20 flex flex-col md:flex-row justify-between items-start gap-8 rounded-lg">
+        <div id="contactus" className="flex w-full flex-col items-start justify-between gap-8 rounded-lg border border-neutral-200 bg-white p-6 shadow-xl shadow-neutral-200 md:flex-row md:p-10">
 
             {/* Left Section */}
             <div className="flex-1 font-sans">
-                <h4 className=" uppercase text-sm font-semibold tracking-wide text-white">
+                <h4 className="text-sm font-bold uppercase tracking-wide text-yellow-700">
                     Contact Us
                 </h4>
 
@@ -60,32 +60,32 @@ const Contact = () => {
                     {/* Location */}
                     <div className="flex items-start">
                         <div>
-                            <h5 className="font-semibold text-white">Follow Us</h5>
+                            <h5 className="font-bold text-ink">Follow Us</h5>
                             <div className="flex items-start px-5 gap-2 py-2">
                                 <img src={instagram} alt="instagram" className="w-[20px] h-[20px]"/>
-                                <a href={"https://www.instagram.com/eyeshade_photography/?igsh=MWc1d2RyZjlhNDIzMw%3D%3D"} className="text-white">eyeshade_photography</a>
+                                <a href={"https://www.instagram.com/eyeshade_photography/?igsh=MWc1d2RyZjlhNDIzMw%3D%3D"} className="text-muted transition-colors hover:text-yellow-700">iKON_Elevators</a>
                             </div>
                             <div className="flex items-start px-5 gap-2 py-2">
                                 <img src={facebook} alt="instagram" className="w-[20px] h-[20px]"/>
-                                <a href={"https://www.facebook.com/share/19Veufdv7o/"} className="text-white">Eyeshade Photography</a>
+                                <a href={"https://www.facebook.com/share/19Veufdv7o/"} className="text-muted transition-colors hover:text-yellow-700">iKON_Elevators</a>
                             </div>
                             <div className="flex items-start px-5 gap-2 py-2">
                                 <img src={whatsapp} alt="whatsapp" className="w-[20px] h-[20px]"/>
-                                <a href={url} target="_blank" rel="noopener noreferrer" className="text-white">+91 9901558949</a>
+                                <a href={url} target="_blank" rel="noopener noreferrer" className="text-muted transition-colors hover:text-yellow-700">+91 9901558949</a>
                             </div>
                             <div className="flex items-start px-5 gap-2 py-2">
                                 <img src={map} alt="map" className="w-[20px] h-[20px]"/>
-                                <a href={"https://maps.app.goo.gl/HqipgFw51sGFHLvV6?g_st=aw"} target="_blank" rel="noopener noreferrer" className="text-white">eyeshade photography</a>
+                                <a href={"https://maps.app.goo.gl/HqipgFw51sGFHLvV6?g_st=aw"} target="_blank" rel="noopener noreferrer" className="text-muted transition-colors hover:text-yellow-700">iKON Elevators</a>
                             </div>
                         </div>
                     </div>
 
                     <div className="flex items-start">
                         <div>
-                            <h5 className="font-semibold text-white">Email Us</h5>
+                            <h5 className="font-bold text-ink">Email Us</h5>
                             <div className="flex items-start px-5 gap-2 py-2">
-                                <img src={email} alt="instagram" className="w-[20px] h-[20px] filter invert"/>
-                                <text className="text-white">abc@gmail.com</text>
+                                <img src={email} alt="instagram" className="h-5 w-5"/>
+                                <span className="text-muted">abc@gmail.com</span>
                             </div>
                         </div>
                     </div>
@@ -93,25 +93,25 @@ const Contact = () => {
             </div>
 
             {/* Right Section - Form */}
-            <div className="flex-1 bg-primary rounded-lg shadow-md shadow-white p-6 border-white text-white font-sans w-full">
-                <h3 className="text-xl font-semibold text-white mb-6">Send us a Message</h3>
+            <div className="w-full flex-1 rounded-lg bg-neutral-50 p-6 font-sans text-ink ring-1 ring-neutral-200">
+                <h3 className="mb-6 text-xl font-bold text-ink">Send us a Message</h3>
 
                 <form onSubmit={handleSubmit} className="space-y-5">
                     <div>
-                        <label className="block text-sm font-medium mb-1">Full Name*</label>
+                        <label className="mb-1 block text-sm font-semibold text-neutral-700">Full Name*</label>
                         <input
                             type="text"
                             name="name"
-                            placeholder="Eyeshade Photography"
+                            placeholder="iKON Elevators"
                             value={formData.name}
                             onChange={handleChange}
                             required
-                            className="w-full border border-gray-300 rounded-md px-3 py-2 focus:ring-2 focus:ring-amber-50 outline-none"
+                            className="w-full rounded-md border border-neutral-300 bg-white px-3 py-2 text-ink outline-none focus:border-yellow-400 focus:ring-2 focus:ring-yellow-100"
                         />
                     </div>
 
                     <div>
-                        <label className="block text-sm font-medium mb-1">Email*</label>
+                        <label className="mb-1 block text-sm font-semibold text-neutral-700">Email*</label>
                         <input
                             type="email"
                             name="email"
@@ -119,12 +119,12 @@ const Contact = () => {
                             value={formData.email}
                             onChange={handleChange}
                             required
-                            className="w-full border border-gray-300 rounded-md px-3 py-2 focus:ring-2 focus:ring-amber-50 outline-none"
+                            className="w-full rounded-md border border-neutral-300 bg-white px-3 py-2 text-ink outline-none focus:border-yellow-400 focus:ring-2 focus:ring-yellow-100"
                         />
                     </div>
 
                     <div>
-                        <label className="block text-sm font-medium mb-1">Phone*</label>
+                        <label className="mb-1 block text-sm font-semibold text-neutral-700">Phone*</label>
 
                         <input
                             type="tel"
@@ -133,13 +133,13 @@ const Contact = () => {
                             value={formData.phone}
                             onChange={handleChange}
                             required
-                            className="w-full border border-gray-300 rounded-md px-3 py-2 focus:ring-2 focus:ring-amber-50 outline-none"
+                            className="w-full rounded-md border border-neutral-300 bg-white px-3 py-2 text-ink outline-none focus:border-yellow-400 focus:ring-2 focus:ring-yellow-100"
                         />
 
                     </div>
 
                     <div>
-                        <label className="block text-sm font-medium mb-1">Message*</label>
+                        <label className="mb-1 block text-sm font-semibold text-neutral-700">Message*</label>
                         <textarea
                             name="message"
                             placeholder="Type your message here"
@@ -147,18 +147,18 @@ const Contact = () => {
                             onChange={handleChange}
                             required
                             rows="4"
-                            className="w-full border border-gray-300 rounded-md px-3 py-2 focus:ring-2 focus:ring-blue-500 outline-none resize-none"
+                            className="w-full resize-none rounded-md border border-neutral-300 bg-white px-3 py-2 text-ink outline-none focus:border-yellow-400 focus:ring-2 focus:ring-yellow-100"
                         ></textarea>
                     </div>
 
                     <button
                         type="submit"
                         disabled={isSending}
-                        className="bg-primary text-black font-semibold px-5 py-2 rounded-md hover:bg-primary transition"
+                        className="rounded-md bg-primary px-5 py-2 font-bold text-ink transition hover:bg-yellow-500 disabled:cursor-not-allowed disabled:opacity-70"
                     >
                         {isSending ? "Sending..." : "Send Message"}
                     </button>
-                    {status && <p className="text-sm font-light">{status}</p>}
+                    {status && <p className="text-sm text-muted">{status}</p>}
                 </form>
             </div>
         </div>
