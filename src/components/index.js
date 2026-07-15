@@ -9,9 +9,11 @@ import Cart from "./Cart.jsx";
 import Details from "./Details.jsx";
 import TransitionPage from "./TransitionPage.jsx";
 import MainPage from "./MainPage.jsx";
+import AboutUs from "./AboutUs.jsx";
 export {
     NavBar,
     Main,
+    AboutUs,
     Contact,
     Footer,
     Gallery,

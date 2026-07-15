@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from "../style.js";
-import {Contact, Features, Footer, Gallery, Main, NavBar} from "./index.js";
+import {Contact, Features, Footer, Gallery, Main, NavBar, AboutUs} from "./index.js";
 
 const MainPage = () => {
     return (
@@ -15,6 +15,12 @@ const MainPage = () => {
                 <section className={`${styles.paddingX} ${styles.flexCenter} min-h-screen bg-white pt-28`}>
                     <div className={`${styles.boxWidth}`}>
                         <Main/>
+                    </div>
+                </section>
+
+                <section className={`${styles.paddingX} ${styles.flexCenter} min-h-screen bg-white pt-28`}>
+                    <div className={`${styles.boxWidth}`}>
+                        <AboutUs/>
                     </div>
                 </section>
 
