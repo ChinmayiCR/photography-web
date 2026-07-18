@@ -9,7 +9,7 @@ const AboutUs = () => (
                 {aboutUs}
             </h1>
 
-            <p className="mt-7 max-w-xl text-lg leading-8 text-muted">
+            <p className="mt-7 w-full max-w-none text-lg leading-8 text-muted">
                 {contentAboutUs}
             </p>
         </div>
