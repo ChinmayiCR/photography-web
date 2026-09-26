@@ -9,28 +9,28 @@ const NavBar = () => {
     const [toggle, setToggle] = useState(false);
     const {cart} = useContext(CartContext);
     return (
-        <nav className="relative flex w-full items-center py-4 font-sans navbar">
-            <ul className="list-none sm:flex hidden justify-start items-center flex-1">
-                {navLinks.map((nav, index) => (
+        <nav className="relative mx-auto flex max-w-[1440px] items-center px-6 py-4 sm:px-12 lg:px-20">
+            <ul className="hidden flex-1 list-none items-center gap-7 sm:flex">
+                {navLinks.map((nav) => (
                         <li key={nav.id}
-                            className={`cursor-pointer text-[15px] font-semibold capitalize text-neutral-700 transition-colors hover:text-yellow-600 ${index === 0 ? 'ml-0' : 'ml-10'}`}>
-                            <HashLink smooth={true} to={`/#${nav.id}`} className="button-special">{nav.title}</HashLink>
+                            className="cursor-pointer text-[11px] font-medium uppercase tracking-[0.14em] text-[#403d38]">
+                            <HashLink smooth={true} to={`/#${nav.id}`} className="transition hover:text-[#6f7661]">{nav.title}</HashLink>
                         </li>
                     )
                 )}
             </ul>
-            <div className="sm:hidden flex-1 justify-start items-center">
+            <div className="flex flex-1 items-center sm:hidden">
                 <img src={!toggle ? menu : close}
                      alt ="menu"
-                     className="h-10 w-10 cursor-pointer object-contain"
+                     className="h-5 w-5 object-contain"
                      onClick={() => setToggle( (prev) => !prev)}
                 />
 
-                <div className={`${toggle ? 'flex' : 'hidden'} absolute left-0 top-16 z-50 my-2 min-w-[180px] rounded-lg border border-neutral-200 bg-white p-5 shadow-xl sidebar`}>
+                <div className={`${toggle ? 'flex' : 'hidden'} absolute left-0 top-full w-full border-b border-[#d8d1c7] bg-[#f6f3ee] px-6 py-5`}>
                     <ul className="list-none flex justify-start items-start flex-1 flex-col">
-                        {navLinks.map((nav, index) => (
+                        {navLinks.map((nav) => (
                                 <li key={nav.id}
-                                    className={`cursor-pointer text-[15px] font-semibold capitalize text-neutral-700 transition-colors hover:text-yellow-600 ${index === 0 ? 'mb-0' : 'mb-4'}`}>
+                                    className="mb-4 cursor-pointer text-xs font-medium uppercase tracking-[0.14em] text-[#403d38]">
                                     <a href={`#${nav.id}`}>{nav.title}</a>
                                 </li>
                             )
@@ -39,14 +39,14 @@ const NavBar = () => {
                 </div>
             </div>
 
-            <div className="absolute left-1/2 transform -translate-x-1/2 items-center flex gap-2">
-                <Link to={"/"}><img src={logo} alt="logo" className="h-9 w-9 rounded-md object-contain" /></Link>
-                <Link to={"/"}><span className="text-sm font-extrabold tracking-tight text-ink sm:text-base">iKON Elevators</span></Link>
+            <div className="absolute left-1/2 flex -translate-x-1/2 items-center gap-2">
+                <Link to={"/"}><img src={logo} alt="mathrushree Bhavana" className="h-6 w-6 object-contain" /></Link>
+                <Link to={"/"} className="whitespace-nowrap text-[11px] font-semibold uppercase tracking-[0.24em] text-[#403d38]">mathrushree Bhavana</Link>
             </div>
 
-            <Link to={"/cart"} className="flex items-center rounded-lg border border-neutral-200 bg-white px-3 py-2 shadow-sm transition-colors hover:border-yellow-300">
-                <img src={cartIcon} alt="cart" className="h-6 w-6"/>
-                <span className="min-w-[1.5rem] px-2 text-center text-sm font-bold text-ink">{cart.length}</span>
+            <Link to={"/cart"} className="flex items-center gap-1 text-[#403d38]" aria-label="View cart">
+                <img src={cartIcon} alt="" className="h-6 w-6 object-contain"/>
+                <span className="min-w-4 text-center text-xs">{cart.length}</span>
             </Link>
 
         </nav>

@@ -11,27 +11,32 @@ const Item = () => {
     const image = images.find((img) => String(img.id) === imageId);
     const {dispatch} = useContext(CartContext);
     return (
-        <div className="min-h-screen bg-paper px-5 text-ink sm:px-10 lg:px-16">
-            <div id="image" className={`${styles.boxWidth}`}>
+        <div className="min-h-screen bg-ivory">
+            <header className="sticky top-0 z-50 border-b border-[#d8d1c7] bg-[#f6f3ee]/95 backdrop-blur">
                 <NavBar/>
-                <div className={`grid grid-cols-4 gap-8 ${styles.paddingY} sm:grid-cols-12`}>
-                    <div className="col-span-4 flex flex-col space-y-6 text-4xl sm:col-span-5">
-                        <div className="text-sm font-semibold text-muted">{`images >> ${imageId}`}</div>
-                        <img src={resolveAssetImage(image.link)} alt="photo" className="h-[520px] w-full rounded-lg object-cover shadow-xl shadow-neutral-200"/>
+            </header>
+            <main className="relative min-h-[calc(100vh-57px)] bg-[url(./assets/background.png)] bg-cover bg-center">
+                <div className="absolute inset-0 bg-[#27251f]/55" />
+                <div id="image" className="relative mx-auto max-w-[1440px] px-6 sm:px-12 lg:px-20">
+                    <div className={`grid grid-cols-4 gap-6 sm:grid-cols-12 ${styles.paddingY}`}>
+                    <div className="flex flex-col space-y-8 text-4xl text-white sm:col-span-4 col-span-4">
+                        <div className="font-thin text-sm">{`images >> ${imageId}`}</div>
+                        <img src={resolveAssetImage(image.link)} alt="photo" className="max-h-[560px] w-full object-cover"/>
                     </div>
-                    <div className="col-span-4 mt-4 flex list-none flex-col justify-start space-y-5 rounded-lg border border-neutral-200 bg-white p-8 shadow-sm sm:col-span-7 sm:mt-10">
-                        <li className="text-4xl font-extrabold text-ink">{image.title}</li>
-                        <li className="text-lg leading-8 text-muted">{image.content}</li>
-                        <li className="text-xl font-bold text-yellow-700">{image.price}</li>
+                    <div className="m-0 mt-0 flex flex-col justify-center space-y-4 list-none text-white sm:col-span-8 col-span-4 sm:mt-10 sm:p-10">
+                        <li className="text-4xl">{image.title}</li>
+                        <li className="text-lg font-thin italic">{image.content}</li>
+                        <li>{image.price}</li>
                         <button
                             onClick={ () => dispatch({type:"Add", image: image})}
                             type="submit"
-                            className="w-fit rounded-md bg-primary px-5 py-2 font-bold text-ink transition hover:bg-yellow-500"
+                            className="mt-3 w-fit border border-white px-6 py-3 text-xs font-semibold uppercase tracking-[0.14em] text-white transition hover:bg-white hover:text-[#403d38]"
                         >Add to Cart</button>
                     </div>
                 </div>
+                </div>
+            </main>
             </div>
-        </div>
     );
 }
 

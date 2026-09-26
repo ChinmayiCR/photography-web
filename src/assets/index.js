@@ -1,4 +1,4 @@
-import background from "./background.jpg";
+import background from "./background.png";
 import menu from "./menu.png";
 import close from "./close.png";
 import logo from "./logo.png";

@@ -1,31 +1,21 @@
 import React from 'react';
 import {content, heading, makers} from "../constants/index.js";
-import {background} from "../assets/index.js";
+import {HashLink} from "react-router-hash-link";
 
 const Main = () => (
-    <section id="home" className="grid items-center gap-12 py-10 md:grid-cols-2 md:py-16">
-        <div className="flex flex-col items-start justify-center font-sans">
-            <p className="mb-5 inline-flex rounded-full border border-yellow-200 bg-yellow-50 px-4 py-2 text-sm font-bold uppercase tracking-wide text-yellow-700">
-                {makers}
-            </p>
-
-            <h1 className="max-w-2xl text-5xl font-extrabold leading-tight tracking-normal text-ink sm:text-6xl md:text-7xl">
-                {heading}
-            </h1>
-
-            <p className="mt-7 max-w-xl text-lg leading-8 text-muted">
-                {content}
-            </p>
-        </div>
-
-        <div className="relative">
-            <div className="absolute -left-6 -top-6 hidden h-28 w-28 rounded-lg bg-yellow-300 md:block" />
-            <img
-                src={background}
-                alt=""
-                className="relative z-10 h-[420px] w-full rounded-lg object-cover shadow-2xl shadow-neutral-300 md:h-[560px]"
-            />
-        </div>
+    <section id="home" className="max-w-2xl text-left text-white">
+        <p className="mb-5 text-xs font-medium uppercase tracking-[0.24em]">Mathrushree Bhavana</p>
+        <h1 className="editorial-serif max-w-xl text-5xl leading-[0.95] sm:text-7xl lg:text-8xl">
+            {heading.split(" ").slice(0, 3).join(" ")} <em>{heading.split(" ").slice(3).join(" ")}</em>
+        </h1>
+        <p className="mt-6 max-w-md text-base leading-relaxed text-white/90 sm:text-lg">{makers}. {content}</p>
+        <HashLink
+            smooth
+            to="/#gallery"
+            className="mt-9 inline-flex min-w-[250px] items-center justify-center border border-white px-7 py-3 text-xs font-semibold uppercase tracking-[0.14em] transition hover:bg-white hover:text-[#403d38]"
+        >
+            Check the menu
+        </HashLink>
     </section>
 );
 

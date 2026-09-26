@@ -37,7 +37,7 @@ const Gallery = () => {
 
     if (status === "loading") {
         return (
-            <div id="gallery" className="mx-auto max-w-6xl px-0 py-12 font-sans text-muted">
+            <div id="gallery" className="py-24 text-[#403d38]">
                 Loading gallery...
             </div>
         );
@@ -45,31 +45,44 @@ const Gallery = () => {
 
     if (status === "error") {
         return (
-            <div id="gallery" className="mx-auto max-w-6xl px-0 py-12 font-sans text-muted">
+            <div id="gallery" className="py-24 text-[#403d38]">
                 Unable to load gallery.
             </div>
         );
     }
 
     return (
-        <div id="gallery" className="mx-auto grid max-w-6xl grid-cols-1 gap-7 py-8 font-sans text-ink sm:grid-cols-2 md:grid-cols-3">
-            {images.map((image) => (
-                <div key={image.id} className="flex flex-col items-start rounded-lg border border-neutral-200 bg-white p-3 shadow-sm transition duration-200 hover:-translate-y-1 hover:shadow-xl">
-                        <Link to={`/item/${image.id}`} className="block w-full">
-                            <img
-                                src={resolveAssetImage(image.link)}
-                                alt={image.id}
-                                className="h-[420px] w-full rounded-lg object-cover"
-                            />
-                        </Link>
-                        <Link to={`/item/${image.id}`}><h3 className="mt-4 text-lg font-bold text-ink">{image.title}</h3></Link>
-                        <Link to={`/item/${image.id}`}>
-                            <p className="text-sm font-semibold text-yellow-700">{image.price}</p>
-                        </Link>
-
+        <section id="gallery" className="py-16 sm:py-20">
+            <div className="mb-12 flex flex-col justify-between gap-5 sm:mb-16 sm:flex-row sm:items-end">
+                <div>
+                    <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-[#6f7661]">The portfolio</p>
+                    <h2 className="editorial-serif text-5xl leading-none text-[#403d38] sm:text-6xl">Selected <em>Stories</em></h2>
                 </div>
-            ))}
-        </div>
+                <p className="max-w-sm text-sm leading-relaxed text-[#726e68]">Honest, graceful imagery for the days you will want to remember in full.</p>
+            </div>
+            <div
+                className="flex snap-x snap-mandatory gap-3 overflow-x-auto px-2 pb-5 sm:gap-4 sm:px-3 lg:px-4"
+                aria-label="Photography portfolio"
+            >
+                {images.map((image) => (
+                <article key={image.id} className="photo-card flex w-[72vw] shrink-0 snap-start flex-col items-start sm:w-[300px] lg:w-[320px]">
+                        <Link to={`/item/${image.id}`}>
+                            <div className="overflow-hidden bg-[#e6e1d8]">
+                                <img
+                                    src={resolveAssetImage(image.link)}
+                                    alt={image.id}
+                                    className="h-[280px] w-full object-cover sm:h-[340px]"
+                                />
+                            </div>
+                        </Link>
+                        <Link to={`/item/${image.id}`}><h3 className="editorial-serif mt-5 text-3xl text-[#403d38]">{image.title}</h3></Link>
+                        <Link to={`/item/${image.id}`}>
+                            <p className="mt-2 text-[11px] font-medium uppercase tracking-[0.14em] text-[#6f7661]">View story</p>
+                        </Link>
+                </article>
+                ))}
+            </div>
+        </section>
     );
 };
 
