@@ -19,7 +19,10 @@ export const images = [
         content: "The word Photography literally means ‘drawing with light’",
         link: image1,
         path: "main >> image1",
-        price: 250,
+        priceBySize: {"100g": 250, "250g": 500, "500g": 750, "1kg": 1000},
+        expiry: "Best before 6 months from packing",
+        sizes: ["100g", "250g", "500g", "1kg"],
+        ingredient: "Whole spices and natural seasonings",
         quantity: 0
     },
     {
@@ -28,7 +31,10 @@ export const images = [
         content:"The word Photography literally means ‘drawing with light’",
         link: image2,
         path: "main/image2",
-        price: 250,
+        priceBySize: {"100g": 250, "250g": 500, "500g": 750, "1kg": 1000},
+        expiry: "Best before 6 months from packing",
+        sizes: ["100g", "250g", "500g", "1kg"],
+        ingredient: "Whole spices and natural seasonings",
         quantity: 0
     },
     {
@@ -37,7 +43,10 @@ export const images = [
         content:"The word Photography literally means ‘drawing with light’",
         link: image3,
         path: "main/image3",
-        price: 500,
+        priceBySize: {"100g": 250, "250g": 500, "500g": 750, "1kg": 1000},
+        expiry: "Best before 6 months from packing",
+        sizes: ["100g", "250g", "500g", "1kg"],
+        ingredient: "Whole spices and natural seasonings",
         quantity: 0
     },
     {
@@ -46,7 +55,10 @@ export const images = [
         content:"The word Photography literally means ‘drawing with light’",
         link: image1,
         path: "main/image4",
-        price: 250,
+        priceBySize: {"100g": 250, "250g": 500, "500g": 750, "1kg": 1000},
+        expiry: "Best before 6 months from packing",
+        sizes: ["100g", "250g", "500g", "1kg"],
+        ingredient: "Whole spices and natural seasonings",
         quantity: 0
     },
     {
@@ -55,7 +67,10 @@ export const images = [
         content:"The word Photography literally means ‘drawing with light’",
         link: image2,
         path: "main/image5",
-        price: 250,
+        priceBySize: {"100g": 250, "250g": 500, "500g": 750, "1kg": 1000},
+        expiry: "Best before 6 months from packing",
+        sizes: ["100g", "250g", "500g", "1kg"],
+        ingredient: "Whole spices and natural seasonings",
         quantity: 0
     },
     {
@@ -64,7 +79,10 @@ export const images = [
         content:"The word Photography literally means ‘drawing with light’",
         link: image3,
         path: "main/image6",
-        price: 500,
+        priceBySize: {"100g": 250, "250g": 500, "500g": 750, "1kg": 1000},
+        expiry: "Best before 6 months from packing",
+        sizes: ["100g", "250g", "500g", "1kg"],
+        ingredient: "Whole spices and natural seasonings",
         quantity: 0
     }
 ];
