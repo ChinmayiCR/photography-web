@@ -7,9 +7,8 @@ const TransitionPage = () => {
             <img
                 src={logo1}
                 alt="Logo"
-                className="w-[110px] h-[110px] filter invert"
+                className="w-[600px] h-[320px]"
             />
-            <text className={`text-lg text-white font-sans`}>mathrushree Bhavana</text>
         </div>
     );
 };

@@ -55,10 +55,10 @@ const Gallery = () => {
         <section id="gallery" className="py-16 sm:py-20">
             <div className="mb-12 flex flex-col justify-between gap-5 sm:mb-16 sm:flex-row sm:items-end">
                 <div>
-                    <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-[#6f7661]">The portfolio</p>
-                    <h2 className="editorial-serif text-5xl leading-none text-[#403d38] sm:text-6xl">Selected <em>Stories</em></h2>
+                    <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-[#6f7661]">Our menu</p>
+                    <h2 className="editorial-serif text-5xl leading-none text-[#403d38] sm:text-6xl">Enjoy our <em>authentic taste</em></h2>
                 </div>
-                <p className="max-w-sm text-sm leading-relaxed text-[#726e68]">Honest, graceful imagery for the days you will want to remember in full.</p>
+                <p className="max-w-sm text-sm leading-relaxed text-[#726e68]">Make your dishes full of aroma, authentic in taste, and effortless to prepare.</p>
             </div>
             <div
                 className="flex snap-x snap-mandatory gap-3 overflow-x-auto px-2 pb-5 sm:gap-4 sm:px-3 lg:px-4"
@@ -77,7 +77,7 @@ const Gallery = () => {
                         </Link>
                         <Link to={`/item/${image.id}`}><h3 className="editorial-serif mt-5 text-3xl text-[#403d38]">{image.title}</h3></Link>
                         <Link to={`/item/${image.id}`}>
-                            <p className="mt-2 text-[11px] font-medium uppercase tracking-[0.14em] text-[#6f7661]">View story</p>
+                            <p className="mt-2 text-[11px] font-medium uppercase tracking-[0.14em] text-[#6f7661]">View product</p>
                         </Link>
                 </article>
                 ))}

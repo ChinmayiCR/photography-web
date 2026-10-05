@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import {instagram, whatsapp, email, facebook, map} from "../assets/index.js";
+import {instagram, whatsapp, email, map} from "../assets/index.js";
 import {sendQueryEmail} from "../api/sendmailapi.jsx";
 
 const Contact = () => {
@@ -43,10 +43,11 @@ const Contact = () => {
         }
     };
 
-    const phoneNumber = "919901558949";
-    const message = encodeURIComponent("Hello, I want to book a photography service!");
+    const phoneNumber = "+919187451509";
+    const message = encodeURIComponent("Hello, I want to order from Mathrushree Bhavana!");
 
     const url = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${message}`;
+
     return (
         <section id="contactus" className="border-t border-[#d8d1c7] py-16 sm:py-20">
             <div className="flex flex-col items-start justify-between gap-12 md:flex-row">
@@ -55,7 +56,7 @@ const Contact = () => {
             <div className="flex-1 text-[#403d38]">
                 <div className="mb-10 max-w-2xl">
                     <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-[#6f7661]">Get in touch</p>
-                    <h2 className="editorial-serif text-5xl leading-none sm:text-6xl">Let us make it <em>memorable</em>.</h2>
+                    <h2 className="editorial-serif text-5xl leading-none sm:text-6xl">Pure . Fresh . Healthy</h2>
                 </div>
 
                 <div className="space-y-6">
@@ -65,19 +66,15 @@ const Contact = () => {
                             <h5 className="font-semibold">Follow Us</h5>
                             <div className="flex items-start px-5 gap-2 py-2">
                                 <img src={instagram} alt="instagram" className="w-[20px] h-[20px]"/>
-                                <a href={"https://www.instagram.com/eyeshade_photography/?igsh=MWc1d2RyZjlhNDIzMw%3D%3D"} className="transition hover:text-[#6f7661]">eyeshade_photography</a>
-                            </div>
-                            <div className="flex items-start px-5 gap-2 py-2">
-                                <img src={facebook} alt="instagram" className="w-[20px] h-[20px]"/>
-                                <a href={"https://www.facebook.com/share/19Veufdv7o/"} className="transition hover:text-[#6f7661]">mathrushree Bhavana</a>
+                                <a href={"https://www.instagram.com/mathrushree_bhavana/"} className="transition hover:text-[#6f7661]">mathrushree_bhavana</a>
                             </div>
                             <div className="flex items-start px-5 gap-2 py-2">
                                 <img src={whatsapp} alt="whatsapp" className="w-[20px] h-[20px]"/>
-                                <a href={url} target="_blank" rel="noopener noreferrer" className="transition hover:text-[#6f7661]">+91 9901558949</a>
+                                <a href={url} target="_blank" rel="noopener noreferrer" className="transition hover:text-[#6f7661]">+919187451509/+917483233362</a>
                             </div>
                             <div className="flex items-start px-5 gap-2 py-2">
                                 <img src={map} alt="map" className="w-[20px] h-[20px]"/>
-                                <a href={"https://maps.app.goo.gl/HqipgFw51sGFHLvV6?g_st=aw"} target="_blank" rel="noopener noreferrer" className="transition hover:text-[#6f7661]">mathrushree Bhavana</a>
+                                <a href={"https://maps.app.goo.gl/HqipgFw51sGFHLvV6?g_st=aw"} target="_blank" rel="noopener noreferrer" className="transition hover:text-[#6f7661]">Mathrushree Bhavana</a>
                             </div>
                         </div>
                     </div>
@@ -87,7 +84,7 @@ const Contact = () => {
                             <h5 className="font-semibold">Email Us</h5>
                             <div className="flex items-start px-5 gap-2 py-2">
                                 <img src={email} alt="email" className="h-[20px] w-[20px]"/>
-                                <span>abc@gmail.com</span>
+                                <span>mathrushreebhavana.foodprodcuts@gmail.com</span>
                             </div>
                         </div>
                     </div>
@@ -104,7 +101,7 @@ const Contact = () => {
                         <input
                             type="text"
                             name="name"
-                            placeholder="mathrushree Bhavana"
+                            placeholder="Mathrushree Bhavana"
                             value={formData.name}
                             onChange={handleChange}
                             required
@@ -131,7 +128,7 @@ const Contact = () => {
                         <input
                             type="tel"
                             name="phone"
-                            placeholder="+91 9901558949"
+                            placeholder="+919187451509"
                             value={formData.phone}
                             onChange={handleChange}
                             required
