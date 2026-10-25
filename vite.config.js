@@ -5,7 +5,7 @@ import fs from 'fs';
 // https://vite.dev/config/
 export default defineConfig(({command}) => {
     const hasLocalCerts = fs.existsSync('./src/key.pem') && fs.existsSync('./src/cert.pem');
-    const apiProxyTarget = "https://eyeshade-photography-183236936603.us-central1.run.app";
+    const apiProxyTarget = "https://photography-web-backend-183236936603.europe-west1.run.app";
 
     return {
         plugins: [tailwindcss(),
