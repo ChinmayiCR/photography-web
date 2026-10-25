@@ -3,7 +3,7 @@
   "rewrites": [
     {
       "source": "/api/(.*)",
-      "destination": "https://eyeshade-photography-183236936603.us-central1.run.app/$1"
+      "destination": "https://photography-web-backend-183236936603.europe-west1.run.app/$1"
     },
     {
       "source": "/(.*)",
