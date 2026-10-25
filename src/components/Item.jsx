@@ -28,7 +28,6 @@ const Item = () => {
                 <div id="image" className="relative mx-auto max-w-[1440px] px-6 sm:px-12 lg:px-20">
                     <div className={`grid grid-cols-4 gap-6 sm:grid-cols-12 ${styles.paddingY}`}>
                     <div className="flex flex-col space-y-8 text-4xl text-white sm:col-span-4 col-span-4">
-                        <div className="font-thin text-sm">{`images >> ${imageId}`}</div>
                         <img src={resolveAssetImage(image.link)} alt="photo" className="max-h-[560px] w-full object-cover"/>
                     </div>
                     <div id="itemdetails" className="m-0 mt-0 flex flex-col justify-center space-y-4 list-none text-white sm:col-span-8 col-span-4 sm:mt-10 sm:p-10">

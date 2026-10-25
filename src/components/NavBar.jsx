@@ -9,11 +9,11 @@ const NavBar = () => {
     const [toggle, setToggle] = useState(false);
     const {cart} = useContext(CartContext);
     return (
-        <nav className="relative mx-auto flex max-w-[1440px] items-center px-6 py-4 sm:px-12 lg:px-20">
+        <nav className="relative flex items-center px-8 py-6 sm:px-12 lg:px-20">
             <ul className="hidden flex-1 list-none items-center gap-7 sm:flex">
                 {navLinks.map((nav) => (
                         <li key={nav.id}
-                            className="cursor-pointer text-[11px] font-medium uppercase tracking-[0.14em] text-[#403d38]">
+                            className="cursor-pointer text-[12px] font-medium uppercase tracking-[0.14em] text-[#403d38]">
                             <HashLink smooth={true} to={`/#${nav.id}`} className="transition hover:text-[#6f7661]">{nav.title}</HashLink>
                         </li>
                     )
@@ -30,7 +30,7 @@ const NavBar = () => {
                     <ul className="list-none flex justify-start items-start flex-1 flex-col">
                         {navLinks.map((nav) => (
                                 <li key={nav.id}
-                                    className="mb-4 cursor-pointer text-xs font-medium uppercase tracking-[0.14em] text-[#403d38]">
+                                    className="mb-4 cursor-pointer text-sm font-medium uppercase tracking-[0.14em] text-[#403d38]">
                                     <a href={`#${nav.id}`}>{nav.title}</a>
                                 </li>
                             )
@@ -40,8 +40,8 @@ const NavBar = () => {
             </div>
 
             <div className="absolute left-1/2 flex -translate-x-1/2 items-center gap-2">
-                <Link to={"/"}><img src={logo} alt="Mathrushree Bhavana" className="h-8 w-8 object-contain" /></Link>
-                <Link to={"/"} className="whitespace-nowrap text-[11px] font-semibold uppercase tracking-[0.24em] text-[#403d38]">Mathrushree Bhavana</Link>
+                <Link to={"/"}><img src={logo} alt="Mathrushree Bhavana" className="h-12 w-auto object-contain" /></Link>
+                <Link to={"/"} className="whitespace-nowrap text-[14px] font-semibold uppercase tracking-[0.24em] text-[#403d38]">Mathrushree Bhavana</Link>
             </div>
 
             <Link to={"/cart"} className="flex items-center gap-1 text-[#403d38]" aria-label="View cart">

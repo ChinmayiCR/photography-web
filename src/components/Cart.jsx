@@ -63,7 +63,7 @@ const Cart = () => {
                                     </li>
                                     <li
                                         className={`sm:col-span-2 flex items-center justify-center`}>
-                                        <span className="text-xl font-bold text-yellow-700">${img.price}</span>
+                                        <span className="text-xl font-bold text-yellow-700">Rs. {img.price}</span>
                                     </li>
                                 </ul>
                                 )
@@ -72,8 +72,8 @@ const Cart = () => {
                         <div className={`flex flex-col`}>
                             <div>
                                 <ul className="mt-8 grid list-none grid-cols-2 gap-6 rounded-lg border border-neutral-200 bg-white p-5 font-sans text-ink shadow-sm sm:grid-cols-12">
-                                    <li className="text-xl font-bold sm:col-start-9 sm:col-span-2">Subtotal: {totalItems}</li>
-                                    <li className="text-xl font-bold sm:col-start-11 sm:col-span-2">Sum: ${totalPrice}</li>
+                                    <li className="text-xl font-bold sm:col-start-9 sm:col-span-2">Total Items: {totalItems}</li>
+                                    <li className="text-xl font-bold sm:col-start-11 sm:col-span-2">Total Sum: Rs. {totalPrice}</li>
                                 </ul>
                             </div>
                             <div className={`grid sm:grid-cols-4 ${styles.marginY}`}>

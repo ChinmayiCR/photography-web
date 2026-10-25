@@ -56,7 +56,7 @@ const Gallery = () => {
             <div className="mb-12 flex flex-col justify-between gap-5 sm:mb-16 sm:flex-row sm:items-end">
                 <div>
                     <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-[#6f7661]">Our menu</p>
-                    <h2 className="editorial-serif text-5xl leading-none text-[#403d38] sm:text-6xl">Enjoy our <em>authentic taste</em></h2>
+                    <h2 className="editorial-serif text-3xl leading-none text-[#403d38] sm:text-4xl">Enjoy our <em>authentic taste</em></h2>
                 </div>
                 <p className="max-w-sm text-sm leading-relaxed text-[#726e68]">Make your dishes full of aroma, authentic in taste, and effortless to prepare.</p>
             </div>

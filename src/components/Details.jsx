@@ -101,7 +101,7 @@ const Details = () => {
                         </div>
 
                         <div>
-                            <label className="mb-1 block text-md font-bold text-ink">Your total price:${totalPrice}</label>
+                            <label className="mb-1 block text-md font-bold text-ink">Your total price: Rs. {totalPrice}</label>
                         </div>
 
                         <button
