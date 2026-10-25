@@ -43,7 +43,7 @@ const Contact = () => {
         }
     };
 
-    const phoneNumber = "+919187451509";
+    const phoneNumber = "+917483233362";
     const message = encodeURIComponent("Hello, I want to order from Mathrushree Bhavana!");
 
     const url = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${message}`;
@@ -74,7 +74,7 @@ const Contact = () => {
                             </div>
                             <div className="flex items-start px-5 gap-2 py-2">
                                 <img src={map} alt="map" className="w-[20px] h-[20px]"/>
-                                <a href={"https://maps.app.goo.gl/HqipgFw51sGFHLvV6?g_st=aw"} target="_blank" rel="noopener noreferrer" className="transition hover:text-[#6f7661]">Mathrushree Bhavana</a>
+                                <a href={"https://maps.app.goo.gl/fipxv6tXzpi5FvsC8"} target="_blank" rel="noopener noreferrer" className="transition hover:text-[#6f7661]">Mathrushree Bhavana</a>
                             </div>
                         </div>
                     </div>
