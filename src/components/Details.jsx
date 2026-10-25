@@ -106,7 +106,7 @@ const Details = () => {
 
                         <button
                             type="submit"
-                            className="rounded-md bg-primary px-5 py-2 font-bold text-ink transition hover:bg-yellow-500"
+                            className="border border-[#403d38] bg-[#403d38] px-7 py-3 text-xs font-semibold uppercase tracking-[0.14em] text-[#f6f3ee] transition hover:bg-transparent hover:text-[#403d38] disabled:cursor-not-allowed disabled:opacity-60"
                         >
                             Confirm Order
                         </button>

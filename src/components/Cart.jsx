@@ -79,7 +79,7 @@ const Cart = () => {
                             <div className={`grid sm:grid-cols-4 ${styles.marginY}`}>
                                 <button
                                     type="submit"
-                                    className="font-bold text-ink hover:bg-yellow-500 sm:col-start-3 sm:col-span-2"
+                                    className="border border-[#403d38] bg-[#403d38] px-7 py-3 text-xs font-semibold uppercase tracking-[0.14em] text-[#f6f3ee] transition hover:bg-transparent hover:text-[#403d38] disabled:cursor-not-allowed disabled:opacity-60"
                                     onClick={handleClick}
                                 >Checkout</button>
                             </div>
