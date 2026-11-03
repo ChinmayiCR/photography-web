@@ -39,10 +39,33 @@ const NavBar = () => {
                 </div>
             </div>
 
-            <div className="absolute left-1/2 flex -translate-x-1/2 items-center gap-2">
+            {/* <div className="absolute left-1/2 flex -translate-x-1/2 items-center gap-2">
                 <Link to={"/"}><img src={logo} alt="Mathrushree Bhavana" className="h-12 w-auto object-contain" /></Link>
                 <Link to={"/"} className="whitespace-nowrap text-[14px] font-semibold uppercase tracking-[0.24em] text-[#403d38]">Mathrushree Bhavana</Link>
+            </div> */}
+
+            <div className="absolute left-1/2 flex -translate-x-1/2 items-center gap-2">
+
+            {/* Brand Logo */}
+                <Link to={"/"}>
+                    <img
+                        src={logo}
+                        alt="Mathrushree Bhavana"
+                        className="h-16 w-16 object-contain"
+                    />
+                </Link>
+
+                {/* Brand Identity */}
+                <Link to={"/"}>
+                    <div className="flex flex-col justify-center gap-1">
+                        <h1 className="font-serif text-xl md:text-xl font-semibold tracking-[0.16em] text-[#45413c]">
+                        MATHRUSHREE BHAVANA
+                        </h1>
+                    </div>
+                </Link>
+
             </div>
+
 
             <Link to={"/cart"} className="flex items-center gap-1 text-[#403d38]" aria-label="View cart">
                 <img src={cartIcon} alt="" className="h-6 w-6 object-contain"/>

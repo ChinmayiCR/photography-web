@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import {instagram, whatsapp, email, map} from "../assets/index.js";
-import {sendQueryEmail} from "../api/sendmailapi.jsx";
 
 const Contact = () => {
     const [formData, setFormData] = useState({
@@ -21,29 +20,45 @@ const Contact = () => {
         setIsSending(true);
         setStatus("Sending...");
 
-        try {
-            await sendQueryEmail({
-                sender: formData.email,
-                senderName: formData.name,
-                senderPhone: formData.phone,
-                message: formData.message,
-            });
-            setStatus("Message sent successfully!");
-            setFormData({
-                name: "",
-                email: "",
-                phone: "",
-                message: "",
-            });
-        } catch (error) {
-            console.error("Error sending contact message:", error);
-            setStatus("Failed to send message. Please try again.");
-        } finally {
-            setIsSending(false);
-        }
+        const phoneNumber = "919187451509";
+
+        const message = `
+        You have received Mathrushree Bhavana query from ${formData.name}.
+
+        Message: ${formData.message}
+
+        Customer Email id: ${formData.email}
+        `;
+
+        const url = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent(message)}`;
+
+        window.location.href = url;
+
+        // try {
+        //     await sendQueryEmail({
+        //         sender: formData.email,
+        //         senderName: formData.name,
+        //         senderPhone: formData.phone,
+        //         message: formData.message,
+        //     });
+        //     setStatus("Message sent successfully!");
+        //     setFormData({
+        //         name: "",
+        //         email: "",
+        //         phone: "",
+        //         message: "",
+        //     });
+        // } catch (error) {
+        //     console.error("Error sending contact message:", error);
+        //     setStatus("Failed to send message. Please try again.");
+        // } finally {
+        //     setIsSending(false);
+        // }
+
+
     };
 
-    const phoneNumber = "+917483233362";
+    const phoneNumber = "+919187451509";
     const message = encodeURIComponent("Hello, I want to order from Mathrushree Bhavana!");
 
     const url = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${message}`;

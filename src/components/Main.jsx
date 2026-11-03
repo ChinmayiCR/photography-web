@@ -11,7 +11,7 @@ const Main = () => (
         <p className="mt-6 max-w-md text-base leading-relaxed text-white/90 sm:text-lg">{makers}. {content}</p>
         <HashLink
             smooth
-            to="/#gallery"
+            to="/shop"
             className="mt-9 inline-flex min-w-[250px] items-center justify-center border border-white px-7 py-3 text-xs font-semibold uppercase tracking-[0.14em] transition hover:bg-white hover:text-[#403d38]"
         >
             Check the menu

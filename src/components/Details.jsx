@@ -1,7 +1,7 @@
 import React, {useContext, useState} from "react";
-import {NavBar} from "./index.js";
+import {Footer, NavBar} from "./index.js";
 import {CartContext} from "../context/CartContextProvider.jsx";
-import {sendEmail} from "../api/sendmailapi.jsx";
+import {sendEmail} from "../api/sendmailapi.jsx"
 
 const Details = () => {
     const {cart, } = useContext(CartContext);
@@ -26,6 +26,37 @@ const Details = () => {
     const handleMailSubmit = async (e) => {
         e.preventDefault();
         setStatus("Sending...");
+
+        // const phoneNumber = "919187451509";
+
+        // const orderItems = cart.map((item, index) =>
+        //     `${index + 1}. ${item.title} - Rs. ${item.price}`
+        // ).join("\n");
+
+        // const message = `
+        // *NEW ORDER ENQUIRY - MATHRUSHREE BHAVANA*
+
+        // Hello! You have received a new order enquiry.
+
+        // *CUSTOMER DETAILS*
+        // Name: ${senderName}
+        // Email: ${sender}
+        // Phone: ${senderPhone}
+
+        // *ORDER DETAILS*
+        // ${orderItems}
+
+        // *TOTAL AMOUNT: Rs. ${totalPrice}*
+
+        // Please contact the customer to confirm the order.
+
+        // Thank you!
+        // Mathrushree Bhavana
+        //     `.trim();
+
+        // const url = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent(message)}`;
+
+        // window.location.href = url;
 
         try {
             const result = await sendEmail(emailJsonBody);
@@ -114,6 +145,7 @@ const Details = () => {
                     {status && <p>{status}</p>}
                 </div>
             </div>
+            <Footer/>
         </div>
     );
 };

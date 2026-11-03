@@ -1,5 +1,5 @@
 import React, {useContext} from 'react';
-import {NavBar} from "./index.js";
+import {Footer, NavBar} from "./index.js";
 import styles from "../style.js";
 import {CartContext} from "../context/CartContextProvider.jsx";
 import {useNavigate} from "react-router-dom";
@@ -24,70 +24,73 @@ const Cart = () => {
     };
 
     return (
-        <div className={`min-h-screen bg-paper text-ink ${styles.paddingX} ${styles.flexCenter}`}>
-            <div id="cart" className={`${styles.boxWidth}`}>
-                <NavBar/>
-                <div className={`${styles.paddingY}`}>
-                    <h1 className="font-sans text-3xl font-extrabold text-ink">Shopping Cart</h1>
-                    <div>
-                        <div className="mt-8 w-full space-y-4">
-                            {cart.map((img) => (
-                                <ul key={img.id} className="grid grid-cols-2 items-center gap-6 rounded-lg border border-neutral-200 bg-white p-4 font-sans text-ink shadow-sm sm:grid-cols-12">
-                                    <li
-                                        className="sm:col-span-2">
-                                        <img src={resolveAssetImage(img.link)} alt={img.title} className="h-28 w-full rounded-md object-cover"/>
-                                    </li>
-                                    <li
-                                        className="font-semibold sm:col-span-6">
-                                        {img.title}
-                                    </li>
-                                    <li
-                                        className={`sm:col-span-2 flex items-center justify-center`}>
-                                        <div className="flex items-center gap-2">
-                                            <button
-                                                type="button"
-                                                className="cursor-pointer rounded border border-neutral-300 bg-white px-3 py-1 text-xl text-ink hover:border-yellow-400 hover:bg-yellow-50"
-                                                onClick={() => handleDecrement(img.id)}
-                                            >
-                                                -
-                                            </button>
-                                            <span className="min-w-[1.5rem] px-2 text-center text-xl font-bold">{img.quantity}</span>
-                                            <button
-                                                type="button"
-                                                className="cursor-pointer rounded border border-neutral-300 bg-white px-3 py-1 text-xl text-ink hover:border-yellow-400 hover:bg-yellow-50"
-                                                onClick={() => handleIncrement(img.id)}
-                                            >
-                                                +
-                                            </button>
-                                        </div>
-                                    </li>
-                                    <li
-                                        className={`sm:col-span-2 flex items-center justify-center`}>
-                                        <span className="text-xl font-bold text-yellow-700">Rs. {img.price}</span>
-                                    </li>
-                                </ul>
-                                )
-                            )}
-                        </div>
-                        <div className={`flex flex-col`}>
-                            <div>
-                                <ul className="mt-8 grid list-none grid-cols-2 gap-6 rounded-lg border border-neutral-200 bg-white p-5 font-sans text-ink shadow-sm sm:grid-cols-12">
-                                    <li className="text-xl font-bold sm:col-start-9 sm:col-span-2">Total Items: {totalItems}</li>
-                                    <li className="text-xl font-bold sm:col-start-11 sm:col-span-2">Total Sum: Rs. {totalPrice}</li>
-                                </ul>
+        <div>
+            <div className={`min-h-screen bg-paper text-ink ${styles.paddingX} ${styles.flexCenter}`}>
+                <div id="cart" className={`${styles.boxWidth}`}>
+                    <NavBar/>
+                    <div className={`${styles.paddingY}`}>
+                        <h1 className="font-sans text-3xl font-extrabold text-ink">Shopping Cart</h1>
+                        <div>
+                            <div className="mt-8 w-full space-y-4">
+                                {cart.map((img) => (
+                                    <ul key={img.id} className="grid grid-cols-2 items-center gap-6 rounded-lg border border-neutral-200 bg-white p-4 font-sans text-ink shadow-sm sm:grid-cols-12">
+                                        <li
+                                            className="sm:col-span-2">
+                                            <img src={resolveAssetImage(img.link)} alt={img.title} className="h-28 w-full rounded-md object-cover"/>
+                                        </li>
+                                        <li
+                                            className="font-semibold sm:col-span-6">
+                                            {img.title}
+                                        </li>
+                                        <li
+                                            className={`sm:col-span-2 flex items-center justify-center`}>
+                                            <div className="flex items-center gap-2">
+                                                <button
+                                                    type="button"
+                                                    className="cursor-pointer rounded border border-neutral-300 bg-white px-3 py-1 text-xl text-ink hover:border-yellow-400 hover:bg-yellow-50"
+                                                    onClick={() => handleDecrement(img.id)}
+                                                >
+                                                    -
+                                                </button>
+                                                <span className="min-w-[1.5rem] px-2 text-center text-xl font-bold">{img.quantity}</span>
+                                                <button
+                                                    type="button"
+                                                    className="cursor-pointer rounded border border-neutral-300 bg-white px-3 py-1 text-xl text-ink hover:border-yellow-400 hover:bg-yellow-50"
+                                                    onClick={() => handleIncrement(img.id)}
+                                                >
+                                                    +
+                                                </button>
+                                            </div>
+                                        </li>
+                                        <li
+                                            className={`sm:col-span-2 flex items-center justify-center`}>
+                                            <span className="text-xl font-bold text-yellow-700">Rs. {img.price}</span>
+                                        </li>
+                                    </ul>
+                                    )
+                                )}
                             </div>
-                            <div className={`grid sm:grid-cols-4 ${styles.marginY}`}>
-                                <button
-                                    type="submit"
-                                    className="border border-[#403d38] bg-[#403d38] px-7 py-3 text-xs font-semibold uppercase tracking-[0.14em] text-[#f6f3ee] transition hover:bg-transparent hover:text-[#403d38] disabled:cursor-not-allowed disabled:opacity-60"
-                                    onClick={handleClick}
-                                >Checkout</button>
+                            <div className={`flex flex-col`}>
+                                <div>
+                                    <ul className="mt-8 grid list-none grid-cols-2 gap-6 rounded-lg border border-neutral-200 bg-white p-5 font-sans text-ink shadow-sm sm:grid-cols-12">
+                                        <li className="text-xl font-bold sm:col-start-9 sm:col-span-2">Total Items: {totalItems}</li>
+                                        <li className="text-xl font-bold sm:col-start-11 sm:col-span-2">Total Sum: Rs. {totalPrice}</li>
+                                    </ul>
+                                </div>
+                                <div className={`grid sm:grid-cols-4 ${styles.marginY}`}>
+                                    <button
+                                        type="submit"
+                                        className="border border-[#403d38] bg-[#403d38] px-7 py-3 text-xs font-semibold uppercase tracking-[0.14em] text-[#f6f3ee] transition hover:bg-transparent hover:text-[#403d38] disabled:cursor-not-allowed disabled:opacity-60"
+                                        onClick={handleClick}
+                                    >Checkout</button>
+                                </div>
                             </div>
-                        </div>
 
+                        </div>
                     </div>
                 </div>
             </div>
+            <Footer/>
         </div>
     );
 };

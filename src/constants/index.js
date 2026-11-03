@@ -11,6 +11,161 @@ export const navLinks = [
 ];
 
 export const recipient = "chinmayicr27@gmail.com";
+export const products = [
+    {
+        id: "image1",
+        title: "Pulav Powder",
+        content: "A traditional blend of handpicked spices, perfectly roasted and ground to bring you restaurant-style pulav at home",
+        link: image1,
+        category: "Powders and Paste",
+        priceBySize: { "100g": 125, "250g": 250, "500g": 500, "1kg": 1000},
+        expiry: "Best before 6 months from packing",
+        sizes: ["100g", "250g", "500g", "1kg"],
+        ingredient: "Whole spices and natural seasonings",
+        isNew: true
+    },
+    {
+        id: "image2",
+        title: "Rasam Powder",
+        content: "A traditional blend of handpicked spices, perfectly roasted and ground to bring you restaurant-style pulav at home",
+        link: image2,
+        category: "Powders and Paste",
+        priceBySize: { "100g": 90, "250g": 180, "500g": 360, "1kg": 720},
+        expiry: "Best before 6 months from packing",
+        sizes: ["100g", "250g", "500g", "1kg"],
+        ingredient: "Whole spices and natural seasonings",
+        isNew: true
+    },
+    {
+        id: "image3",
+        title: "Groundnut Chutney Powder",
+        content: "A traditional blend of handpicked spices, perfectly roasted and ground to bring you restaurant-style pulav at home",
+        link: image3,
+        category: "Chutney Powders",
+        priceBySize: { "100g": 95, "250g": 190, "500g": 380, "1kg": 760},
+        expiry: "Best before 6 months from packing",
+        sizes: ["100g", "250g", "500g", "1kg"],
+        ingredient: "Whole spices and natural seasonings",
+        isNew: true
+    },
+    {
+        id: "image4",
+        title: "Midi Pickle",
+        content: "A traditional blend of handpicked spices, perfectly roasted and ground to bring you restaurant-style pulav at home",
+        link: image4,
+        category: "Pickles",
+        priceBySize: { "100g": 105, "250g": 210, "500g": 420, "1kg": 840 },
+        expiry: "Best before 6 months from packing",
+        sizes: ["100g", "250g", "500g", "1kg"],
+        ingredient: "Whole spices and natural seasonings"
+    },
+    {
+        id: "image5",
+        title: "Curry Leaves Chutney Pudi",
+        content: "A traditional blend of handpicked spices, perfectly roasted and ground to bring you restaurant-style pulav at home",
+        link: image5,
+        category: "Chutney Powders",
+        priceBySize: { "100g": 80, "250g": 160, "500g": 320, "1kg": 640 },
+        expiry: "Best before 6 months from packing",
+        sizes: ["100g", "250g", "500g", "1kg"],
+        ingredient: "Whole spices and natural seasonings"
+    },
+    {
+        id: "image6",
+        title: "Engayi Powder",
+        content: "A traditional blend of handpicked spices, perfectly roasted and ground to bring you restaurant-style pulav at home",
+        link: image6,
+        category: "Chutney Powders",
+        priceBySize: { "100g": 250, "250g": 225, "500g": 450, "1kg": 900 },
+        expiry: "Best before 6 months from packing",
+        sizes: ["100g", "250g", "500g", "1kg"],
+        ingredient: "Whole spices and natural seasonings"
+    },
+    {
+        id: "image7",
+        title: "Lemon Pickle",
+        content: "Bold, tangy and irresistibly homemade",
+        link: image7,
+        category: "Pickles",
+        priceBySize: { "100g": 35, "250g": 70, "500g": 140, "1kg": 280 },
+        expiry: "Best before 6 months from packing",
+        sizes: ["100g", "250g", "500g", "1kg"],
+        ingredient: "Whole spices and natural seasonings"
+    },
+    {
+        id: "image8",
+        title: "Honey",
+        content: "Our honey is 100% pure, naturally extracted and packed with love to bring you the goodness of nature.",
+        link: image8,
+        category: "Others",
+        priceBySize: { "500g": 220, "1kg": 440 },
+        expiry: "Best before 6 months from packing",
+        sizes: ["500g", "1kg"],
+        ingredient: "Pure organic honey"
+    },
+    {
+        id: "image9",
+        title: "Turmeric Powder",
+        content: "The golden touch of good health",
+        link: image9,
+        category: "Powders and Paste",
+        priceBySize: { "100g": 50, "250g": 100, "500g": 200, "1kg": 400 },
+        expiry: "Best before 6 months from packing",
+        sizes: ["100g", "250g", "500g", "1kg"],
+        ingredient: "Whole spices and natural seasonings"
+    },
+    {
+        id: "image10",
+        title: "Sambar Powder",
+        content: "The authentic taste of south india, now in every spoon.",
+        link: image10,
+        category: "Powders and Paste",
+        priceBySize: { "250g": 160, "500g": 320, "1kg": 640 },
+        expiry: "Best before 6 months from packing",
+        sizes: ["250g", "500g", "1kg"],
+        ingredient: "Whole spices and natural seasonings"
+    },
+    {
+        id: "image11",
+        title: "Pepper",
+        content: "Our pepper is handpicked at the peak of freshness and sun dried to lock in its natural oils, aroma and rich flavour.",
+        link: image11,
+        category: "Powders and Paste",
+        priceBySize: { "100g": 150, "250g": 300, "500g": 600, "1kg": 900 },
+        expiry: "Best before 6 months from packing",
+        sizes: ["100g", "250g", "500g", "1kg"],
+        ingredient: "Whole spices and natural seasonings"
+    },
+    {
+        id: "image12",
+        title: "Vangibath Powder",
+        content: "Authentic taste, homemade goodness.",
+        link: image12,
+        category: "Powders and Paste",
+        priceBySize: { "250g": 155, "500g": 310, "1kg": 620 },
+        expiry: "Best before 6 months from packing",
+        sizes: ["250g", "500g", "1kg"],
+        ingredient: "Whole spices and natural seasonings"
+    },
+    {
+        id: "image13",
+        title: "Puliyogre Paste",
+        content: "The perfect blend of tamarind, spices and love for the traditional taste of puliyogre.",
+        link: image13,
+        category: "Powders and Paste",
+        priceBySize: { "250g": 230, "500g": 460, "1kg": 920 },
+        expiry: "Best before 6 months from packing",
+        sizes: ["250g", "500g", "1kg"],
+        ingredient: "Whole spices and natural seasonings"
+    }
+];
+
+export const categories = [
+    "Powders and Paste",
+    "Chutney Powders",
+    "Pickles",
+    "Others"
+];
 
 export const images = [
     {

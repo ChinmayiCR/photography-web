@@ -1,9 +1,10 @@
 import React from 'react';
-import {Contact, Features, Footer, Gallery, Main, NavBar} from "./index.js";
+import {Contact, Features, Footer, Gallery, Main, NavBar, AnnouncementBar, Reviews} from "./index.js";
 
 const MainPage = () => {
     return (
         <div className="min-h-screen bg-ivory">
+            <AnnouncementBar/>
             <header className="sticky top-0 border-b w-full border-[#d8d1c7] bg-[#f6f3ee]/95 backdrop-blur">
                 <NavBar/>
             </header>
@@ -19,6 +20,7 @@ const MainPage = () => {
                     <Features/>
                     <Contact/>
                 </div>
+                <Reviews/>
             </main>
             <Footer/>
         </div>
