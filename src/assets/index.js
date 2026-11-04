@@ -16,6 +16,12 @@ import image10 from "./image10.jpeg";
 import image11 from "./image11.jpeg";
 import image12 from "./image12.jpeg";
 import image13 from "./image13.jpeg";
+import image14 from "./image14.jpeg";
+import image15 from "./image15.jpeg";
+import image16 from "./image16.jpeg";
+import image17 from "./image17.jpeg";
+import image18 from "./image18.jpeg";
+import image19 from "./image19.jpeg";
 import instagram from "./instagram.png";
 import whatsapp from "./whatsapp.png";
 import email from "../assets/email.png";
@@ -37,6 +43,10 @@ const imageAssets = {
   image11,
   image12,
   image13,
+  image14,
+  image15,
+  image16,
+  image17
 };
 
 const resolveAssetImage = (link) => imageAssets[link] || link;
@@ -60,6 +70,12 @@ export {
   image11,
   image12,
   image13,
+  image14,
+  image15,
+  image16,
+  image17,
+  image18,
+  image19,
   instagram,
   whatsapp,
   email,

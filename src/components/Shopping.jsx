@@ -1,9 +1,7 @@
-
-import React, { useState } from "react";
 import { AnnouncementBar, Footer, NavBar } from "./index.js";
 import { products, categories } from "../constants/index.js";
-import { useNavigate } from "react-router-dom";
-
+import { useNavigate, useLocation } from "react-router-dom";
+import React, { useState, useEffect } from "react";
 const ProductCard = ({ product }) => {
     const [selectedSize, setSelectedSize] = useState(product.sizes[0]);
     const navigate = useNavigate();
@@ -31,7 +29,7 @@ const ProductCard = ({ product }) => {
                 <img
                     src={product.link}
                     alt={product.title}
-                    className="h-[full] w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
             </div>
 
@@ -53,14 +51,6 @@ const ProductCard = ({ product }) => {
                         ₹{product.priceBySize[selectedSize]}
                     </p>
                 </div>
-
-                {product.content && (
-                    <p className="mt-3 line-clamp-2 text-sm leading-relaxed text-[#82796d]">
-                        {product.content}
-                    </p>
-                )}
-
-                
 
                 {/* Size Selector */}
                 <div className="mt-4">
@@ -100,9 +90,33 @@ const ProductCard = ({ product }) => {
 };
 
 const Shopping = () => {
+
+    
+
     const [search, setSearch] = useState("");
-    const [selectedCategory, setSelectedCategory] = useState("All");
+
+    const location = useLocation();
+    const [selectedCategory, setSelectedCategory] = useState(
+        location.state?.selectedCategory || "All"
+    );
     const [showAll, setShowAll] = useState(false);
+
+    const scrollToProducts = () => {
+        setTimeout(() => {
+            document
+                .getElementById("shopCategory")
+                ?.scrollIntoView({ behavior: "smooth", block: "start" });
+        }, 100);
+    };
+
+    // Runs when arriving from another page (e.g. Features) with a category
+    useEffect(() => {
+        if (location.state?.selectedCategory) {
+            setSelectedCategory(location.state.selectedCategory);
+            setShowAll(false);
+            scrollToProducts();
+        }
+    }, [location.state]);
 
     const filteredProducts = products.filter((product) => {
         const matchesSearch =
@@ -116,8 +130,8 @@ const Shopping = () => {
         return matchesSearch && matchesCategory;
     });
 
-    const newLaunches = filteredProducts.filter(
-        (product) => product.isNew
+    const newLaunches = products.filter(
+        (product) => product.newLaunch === true
     );
 
     const displayedProducts = showAll
@@ -136,7 +150,7 @@ const Shopping = () => {
             <main className="mx-auto max-w-[1440px] px-6 sm:px-12 lg:px-20">
 
                 {/* Search Bar */}
-                <section className="flex justify-center py-10 sm:py-14">
+                <section className="flex justify-center pt-10 pb-5 sm:py-7 sm:pt-10">
                     <div className="flex w-full max-w-2xl items-center gap-3 rounded-full border border-[#d8d1c7] bg-[#f6f3ee] px-6 py-3.5">
 
                         <svg
@@ -168,41 +182,6 @@ const Shopping = () => {
                     </div>
                 </section>
 
-                {/* Shop by Category */}
-                <section className="pb-16 sm:pb-20">
-
-                    <div className="mb-7">
-                        <h1 className="text-2xl font-medium text-[#27251f] sm:text-3xl">
-                            Shop by Category
-                        </h1>
-                    </div>
-
-                    <div className="flex gap-3 overflow-x-auto pb-3 scrollbar-hide">
-
-                        {categories.map((category) => (
-                            <button
-                                key={category}
-                                onClick={() => {
-                                    setSelectedCategory(
-                                        selectedCategory === category
-                                            ? "All"
-                                            : category
-                                    );
-                                    setShowAll(false);
-                                }}
-                                className={`shrink-0 rounded-full border px-6 py-3 text-sm transition-all duration-300 ${
-                                    selectedCategory === category
-                                        ? "border-[#27251f] bg-[#27251f] text-white"
-                                        : "border-[#d8d1c7] text-[#514a41] hover:bg-[#27251f] hover:text-white"
-                                }`}
-                            >
-                                {category}
-                            </button>
-                        ))}
-
-                    </div>
-                </section>
-
                 {/* New Launch */}
                 <section className="pb-16 sm:pb-24">
 
@@ -226,6 +205,39 @@ const Shopping = () => {
                                 No new launches found.
                             </p>
                         )}
+
+                    </div>
+                </section>
+
+                {/* Shop by Category */}
+                <section id="shopCategory" className="scroll-mt-24 pb-4 sm:pb-8">
+                    <div className="mb-7">
+                        <h1 className="text-2xl font-medium text-[#27251f] sm:text-3xl">
+                            Shop by Category
+                        </h1>
+                    </div>
+
+                    <div className="flex gap-3 overflow-x-auto pb-3 scrollbar-hide">
+
+                        {categories.map((category) => (
+                            <button
+                                key={category}
+                                onClick={() => {
+                                    setSelectedCategory(
+                                        selectedCategory === category ? "All" : category
+                                    );
+                                    setShowAll(false);
+                                    scrollToProducts();
+                                }}
+                                className={`shrink-0 rounded-full border px-6 py-3 text-sm transition-all duration-300 ${
+                                    selectedCategory === category
+                                        ? "border-[#27251f] bg-[#27251f] text-white"
+                                        : "border-[#d8d1c7] text-[#514a41] hover:bg-[#27251f] hover:text-white"
+                                }`}
+                            >
+                                {category}
+                            </button>
+                        ))}
 
                     </div>
                 </section>

@@ -27,7 +27,7 @@ const Contact = () => {
 
         Message: ${formData.message}
 
-        Customer Email id: ${formData.email}
+        Customer's Place: ${formData.place}
         `;
 
         const url = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent(message)}`;
@@ -99,7 +99,7 @@ const Contact = () => {
                             <h5 className="font-semibold">Email Us</h5>
                             <div className="flex items-start px-5 gap-2 py-2">
                                 <img src={email} alt="email" className="h-[20px] w-[20px]"/>
-                                <span>mathrushreebhavana.foodprodcuts@gmail.com</span>
+                                <span>mathrushreebhavana.foodproducts@gmail.com</span>
                             </div>
                         </div>
                     </div>
@@ -125,12 +125,12 @@ const Contact = () => {
                     </div>
 
                     <div>
-                        <label className="block text-sm font-medium mb-1">Email*</label>
+                        <label className="block text-sm font-medium mb-1">Place*</label>
                         <input
-                            type="email"
-                            name="email"
-                            placeholder="example@gmail.com"
-                            value={formData.email}
+                            type="text"
+                            name="place"
+                            placeholder="City, State"
+                            value={formData.place}
                             onChange={handleChange}
                             required
                             className="w-full border-b border-[#bcb5aa] bg-transparent px-0 py-3 outline-none placeholder:text-[#8e887f] focus:border-[#403d38]"

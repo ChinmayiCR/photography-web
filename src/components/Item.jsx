@@ -1,5 +1,5 @@
 
-import { images } from "../constants/index.js";
+import { products } from "../constants/index.js";
 import { NavBar } from "../components/index.js";
 import styles from "../style.js";
 import { useParams } from "react-router-dom";
@@ -9,7 +9,7 @@ import { resolveAssetImage } from "../assets/index.js";
 
 const Item = () => {
     const { imageId } = useParams();
-    const image = images.find((img) => String(img.id) === imageId);
+    const image = products.find((img) => String(img.id) === imageId);
 
     const { dispatch } = useContext(CartContext);
 

@@ -1,4 +1,4 @@
-import {image1, image2, image3, image4, image5, image6, image7, image8, image9, image10, image11, image12, image13} from '../assets/index.js';
+import {image1, image2, image3, image4, image5, image6, image7, image8, image9, image10, image11, image12, image13, image14, image15, image16, image17, image18, image19} from '../assets/index.js';
 export const navLinks = [
     {
         id: "gallery",
@@ -19,7 +19,7 @@ export const products = [
         link: image1,
         category: "Powders and Paste",
         priceBySize: { "100g": 125, "250g": 250, "500g": 500, "1kg": 1000},
-        expiry: "Best before 6 months from packing",
+        expiry: "Best before 24 to 36 months from the date of manufacture.",
         sizes: ["100g", "250g", "500g", "1kg"],
         ingredient: "Whole spices and natural seasonings",
         isNew: true
@@ -31,7 +31,7 @@ export const products = [
         link: image2,
         category: "Powders and Paste",
         priceBySize: { "100g": 90, "250g": 180, "500g": 360, "1kg": 720},
-        expiry: "Best before 6 months from packing",
+        expiry: "Best before 24 to 36 months from the date of manufacture.",
         sizes: ["100g", "250g", "500g", "1kg"],
         ingredient: "Whole spices and natural seasonings",
         isNew: true
@@ -43,41 +43,41 @@ export const products = [
         link: image3,
         category: "Chutney Powders",
         priceBySize: { "100g": 95, "250g": 190, "500g": 380, "1kg": 760},
-        expiry: "Best before 6 months from packing",
+        expiry: "Best before 6 months from the date of manufacture.",
         sizes: ["100g", "250g", "500g", "1kg"],
         ingredient: "Whole spices and natural seasonings",
         isNew: true
     },
     {
         id: "image4",
-        title: "Midi Pickle",
+        title: "Tender Mango Pickle (Midi) Pickle",
         content: "A traditional blend of handpicked spices, perfectly roasted and ground to bring you restaurant-style pulav at home",
         link: image4,
         category: "Pickles",
         priceBySize: { "100g": 105, "250g": 210, "500g": 420, "1kg": 840 },
-        expiry: "Best before 6 months from packing",
+        expiry: "Best before 24 to 36 months from the date of manufacture.",
         sizes: ["100g", "250g", "500g", "1kg"],
         ingredient: "Whole spices and natural seasonings"
     },
     {
         id: "image5",
-        title: "Curry Leaves Chutney Pudi",
+        title: "Curry Leaves Chutney Powder",
         content: "A traditional blend of handpicked spices, perfectly roasted and ground to bring you restaurant-style pulav at home",
         link: image5,
         category: "Chutney Powders",
         priceBySize: { "100g": 80, "250g": 160, "500g": 320, "1kg": 640 },
-        expiry: "Best before 6 months from packing",
+        expiry: "Best before 6 months from the date of manufacture.",
         sizes: ["100g", "250g", "500g", "1kg"],
         ingredient: "Whole spices and natural seasonings"
     },
     {
         id: "image6",
-        title: "Engayi Powder",
+        title: "Ennegayi (Stuffed Brinjal Masala/powder)",
         content: "A traditional blend of handpicked spices, perfectly roasted and ground to bring you restaurant-style pulav at home",
         link: image6,
-        category: "Chutney Powders",
-        priceBySize: { "100g": 250, "250g": 225, "500g": 450, "1kg": 900 },
-        expiry: "Best before 6 months from packing",
+        category: "Powders and Paste",
+        priceBySize: { "100g": 90, "250g": 225, "500g": 450, "1kg": 900 },
+        expiry: "Best before 24 to 36 months from the date of manufacture.",
         sizes: ["100g", "250g", "500g", "1kg"],
         ingredient: "Whole spices and natural seasonings"
     },
@@ -87,9 +87,9 @@ export const products = [
         content: "Bold, tangy and irresistibly homemade",
         link: image7,
         category: "Pickles",
-        priceBySize: { "100g": 35, "250g": 70, "500g": 140, "1kg": 280 },
-        expiry: "Best before 6 months from packing",
-        sizes: ["100g", "250g", "500g", "1kg"],
+        priceBySize: { "250g": 80, "500g": 160, "1kg": 320 },
+        expiry: "Best before 24 to 36 months from the date of manufacture.",
+        sizes: ["250g", "500g", "1kg"],
         ingredient: "Whole spices and natural seasonings"
     },
     {
@@ -98,21 +98,21 @@ export const products = [
         content: "Our honey is 100% pure, naturally extracted and packed with love to bring you the goodness of nature.",
         link: image8,
         category: "Others",
-        priceBySize: { "500g": 220, "1kg": 440 },
-        expiry: "Best before 6 months from packing",
+        priceBySize: { "500g": 250, "1kg": 460 },
+        expiry: "Best before 24 to 36 months from the date of manufacture.",
         sizes: ["500g", "1kg"],
         ingredient: "Pure organic honey"
     },
     {
         id: "image9",
         title: "Turmeric Powder",
-        content: "The golden touch of good health",
+        content: "The authentic taste of south india, now in every spoon.",
         link: image9,
-        category: "Powders and Paste",
-        priceBySize: { "100g": 50, "250g": 100, "500g": 200, "1kg": 400 },
-        expiry: "Best before 6 months from packing",
-        sizes: ["100g", "250g", "500g", "1kg"],
-        ingredient: "Whole spices and natural seasonings"
+        category: "Others",
+        priceBySize: { "100g":50, "200g":100 ,"500g": 200, "1kg": 400 },
+        expiry: "Best before 24 to 36 months from the date of manufacture.",
+        sizes: ["500g", "1kg"],
+        ingredient: "Pure organic honey"
     },
     {
         id: "image10",
@@ -121,46 +121,120 @@ export const products = [
         link: image10,
         category: "Powders and Paste",
         priceBySize: { "250g": 160, "500g": 320, "1kg": 640 },
-        expiry: "Best before 6 months from packing",
+        expiry: "Best before 24 to 36 months from the date of manufacture.",
         sizes: ["250g", "500g", "1kg"],
         ingredient: "Whole spices and natural seasonings"
     },
     {
         id: "image11",
-        title: "Pepper",
+        title: "Pepper Powder",
         content: "Our pepper is handpicked at the peak of freshness and sun dried to lock in its natural oils, aroma and rich flavour.",
         link: image11,
-        category: "Powders and Paste",
+        category: "Others",
         priceBySize: { "100g": 150, "250g": 300, "500g": 600, "1kg": 900 },
-        expiry: "Best before 6 months from packing",
+        expiry: "Best before 24 to 36 months from the date of manufacture.",
         sizes: ["100g", "250g", "500g", "1kg"],
         ingredient: "Whole spices and natural seasonings"
     },
     {
         id: "image12",
-        title: "Vangibath Powder",
+        title: "Vangibhath Powder",
         content: "Authentic taste, homemade goodness.",
         link: image12,
         category: "Powders and Paste",
         priceBySize: { "250g": 155, "500g": 310, "1kg": 620 },
-        expiry: "Best before 6 months from packing",
+        expiry: "Best before 24 to 36 months from the date of manufacture.",
         sizes: ["250g", "500g", "1kg"],
         ingredient: "Whole spices and natural seasonings"
     },
     {
         id: "image13",
-        title: "Puliyogre Paste",
+        title: "Puliogare Paste",
         content: "The perfect blend of tamarind, spices and love for the traditional taste of puliyogre.",
         link: image13,
         category: "Powders and Paste",
         priceBySize: { "250g": 230, "500g": 460, "1kg": 920 },
-        expiry: "Best before 6 months from packing",
+        expiry: "Best before 24 to 36 months from the date of manufacture.",
         sizes: ["250g", "500g", "1kg"],
         ingredient: "Whole spices and natural seasonings"
+    },
+    {
+        id: "image14",
+        title: "Sweet Lemon Pickle",
+        content: "Bold, tangy and irresistibly homemade",
+        link: image14,
+        category: "Pickles",
+        priceBySize: { "250g": 80, "500g": 160, "1kg": 320 },
+        expiry: "Best before 24 to 36 months from the date of manufacture.",
+        sizes: ["250g", "500g", "1kg"],
+        ingredient: "Whole spices and natural seasonings",
+        isNew:true,
+        newLaunch:true
+    },
+    {
+        id: "image15",
+        title: "Chakli (Ready Mix)",
+        content: "The perfect blend of tamarind, spices and love for the traditional taste of puliyogre.",
+        link: image15,
+        category: "Others",
+        priceBySize: { "250g": 90, "500g": 180, "1kg": 360 },
+        expiry: "Best before 24 to 36 months from the date of manufacture.",
+        sizes: ["250g", "500g", "1kg"],
+        ingredient: "Whole spices and natural seasonings",
+        isNew:true,
+        newLaunch:true
+    },
+    {   id: "image16",
+        title: "Kashaya Powder",
+        content: "The perfect blend of tamarind, spices and love for the traditional taste of puliyogre.",
+        link: image16,
+        category: "Others",
+        priceBySize: { "100g": 110,"250g": 220, "500g": 440, "1kg": 880 },
+        expiry: "Best before 24 to 36 months from the date of manufacture.",
+        sizes: ["100g", "250g", "500g", "1kg"],
+        ingredient: "Whole spices and natural seasonings"
+    },
+    {
+        id: "image17",
+        title: "Cut Mango Pickle",
+        content:"Bold, tangy and irresistibly homemade",
+        link: image17,
+        category: "Pickles",
+        priceBySize: {"250g": 220, "500g": 440, "1kg": 880},
+        expiry: "Best before 24 to 36 months from the date of manufacture.",
+        sizes: ["250g", "500g", "1kg"],
+        ingredient: "Whole spices and natural seasonings",
+        quantity: 0
+    },
+    {
+        id: "image18",
+        title: "Bisibele bhath Powder",
+        content:"Bold, tangy and irresistibly homemade",
+        link: image18,
+        category: "Powders and Paste",
+        priceBySize: {"250g": 160, "500g": 320, "1kg": 640},
+        expiry: "Best before 24 to 36 months from the date of manufacture.",
+        sizes: ["250g", "500g", "1kg"],
+        ingredient: "Whole spices and natural seasonings",
+        quantity: 0
+    },
+    {
+        id: "image19",
+        title: "Dry Chutney Powder (Dal)",
+        content:"Bold, tangy and irresistibly homemade",
+        link: image19,
+        category: "Chutney Powders",
+        priceBySize: {"100g": 65, "250g": 130, "500g": 260, "1kg": 520},
+        expiry: "Best before 6 months from the date of manufacture.",
+        sizes: ["100g","250g", "500g", "1kg"],
+        ingredient: "Whole spices and natural seasonings",
+        quantity: 0
     }
+
 ];
 
 export const categories = [
+    "All",
     "Powders and Paste",
     "Chutney Powders",
     "Pickles",
@@ -206,7 +280,7 @@ export const images = [
     },
     {
         id: "image4",
-        title: "Midi Pickle",
+        title: "Tender Mango Pickle (Midi) Pickle",
         content:"",
         link: image4,
         path: "main/image4",
@@ -218,7 +292,7 @@ export const images = [
     },
     {
         id: "image5",
-        title: "Curry Leaves Chutney Pudi",
+        title: "Curry Leaves Chutney Powder",
         content:"",
         link: image5,
         path: "main/image5",
@@ -230,7 +304,7 @@ export const images = [
     },
     {
         id: "image6",
-        title: "Engayi Powder",
+        title: "Ennegayi (Stuffed Brinjal Masala/powder)",
         content:"",
         link: image6,
         path: "main/image6",
@@ -290,7 +364,7 @@ export const images = [
     },
     {
         id: "image11",
-        title: "Pepper",
+        title: "Pepper Powder",
         content:"Our pepper is handpicked at the peak of freshness and sun dried to lock in its natural oils, aroma and rich flavour.",
         link: image11,
         path: "main/image11",
@@ -336,7 +410,7 @@ export const subStylePhoto = [
     {
         id:"pickles",
         title:"Pickles",
-        content:"Midi pickle, cut mango pickle and lemon pickle"
+        content:"Tender Mango Pickle (Midi) pickle, cut mango pickle and lemon pickle"
     },
     {
         id:"paste",

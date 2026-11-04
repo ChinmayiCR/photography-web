@@ -52,7 +52,7 @@ const Gallery = () => {
     }
 
     return (
-        <section id="gallery" className="py-16 sm:py-20">
+        <section id="gallery" className="py-8 sm:py-16">
             <div className="mb-12 flex flex-col justify-between gap-5 sm:mb-16 sm:flex-row sm:items-end">
                 <div>
                     <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-[#6f7661]">Our menu</p>
