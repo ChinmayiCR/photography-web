@@ -2,10 +2,10 @@
 import React, { useContext, useState } from "react";
 import { Footer, NavBar } from "./index.js";
 import { CartContext } from "../context/CartContextProvider.jsx";
+import { Trash2 } from "lucide-react";
 
 const Details = () => {
-    const { cart } = useContext(CartContext);
-
+    const { cart, dispatch } = useContext(CartContext);
     const totalPrice = cart.reduce(
         (sum, item) => sum + item.price * item.quantity,
         0
@@ -16,6 +16,12 @@ const Details = () => {
         0
     );
 
+    const handleRemoveItem = (id) => {
+        dispatch({
+            type: "Reset",
+            id,
+        });
+    };
     const [senderPlace, setSender] = useState("");
     const [senderName, setSenderName] = useState("");
     const [senderPhone, setSenderPhone] = useState("");
@@ -142,9 +148,20 @@ Mathrushree Bhavana
                                         key={item.id}
                                         className="rounded-md border border-neutral-200 bg-paper p-4"
                                     >
-                                        <p className="font-semibold text-ink">
-                                            {item.title}
-                                        </p>
+                                        <div className="flex items-center justify-between gap-3">
+                                            <p className="font-semibold text-ink">
+                                                {item.title}
+                                            </p>
+
+                                            <button
+                                                type="button"
+                                                onClick={() => handleRemoveItem(item.id)}
+                                                className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-red-600 transition hover:text-red-800"
+                                            >
+                                                <Trash2 size={15} />
+                                                <span>Remove</span>
+                                            </button>
+                                        </div>
 
                                         <div className="mt-2 grid grid-cols-2 gap-2 text-sm text-muted">
                                             <p>

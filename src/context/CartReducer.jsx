@@ -42,7 +42,7 @@ const CartReducer = (state, action) => {
 
         case "Decrement": {
             return state.map(item =>
-                item.id === action.id && item.quantity > 1
+                item.id === action.id && item.quantity > 0
                     ? { ...item, quantity: item.quantity - 1 }
                     : item
             );

@@ -5,6 +5,7 @@ import styles from "../style.js";
 import { CartContext } from "../context/CartContextProvider.jsx";
 import { useNavigate } from "react-router-dom";
 import { resolveAssetImage } from "../assets/index.js";
+import { Trash2 } from "lucide-react";
 
 const Cart = () => {
     const { cart, dispatch } = useContext(CartContext);
@@ -40,6 +41,10 @@ const Cart = () => {
 
     const handleClick = () => {
         navigate("/details");
+    };
+
+    const handleRemoveItem = (id) => {
+        dispatch({ type: "Reset", id });
     };
 
     return (
@@ -106,11 +111,11 @@ const Cart = () => {
                                     </li>
 
                                     {/* Quantity */}
-                                    <li className="flex items-center justify-center sm:col-span-3">
+                                    <li className="flex flex-col items-center justify-center gap-3 sm:col-span-3">
                                         <div className="flex items-center gap-2">
                                             <button
                                                 type="button"
-                                                className="rounded border border-neutral-300 px-3 py-1 text-xl hover:bg-neutral-100"
+                                                className="rounded border border-neutral-300 px-3 py-1 text-xl transition hover:bg-neutral-100"
                                                 onClick={() => handleDecrement(img.id)}
                                             >
                                                 -
@@ -122,12 +127,22 @@ const Cart = () => {
 
                                             <button
                                                 type="button"
-                                                className="rounded border border-neutral-300 px-3 py-1 text-xl hover:bg-neutral-100"
+                                                className="rounded border border-neutral-300 px-3 py-1 text-xl transition hover:bg-neutral-100"
                                                 onClick={() => handleIncrement(img.id)}
                                             >
                                                 +
                                             </button>
                                         </div>
+
+                                        {/* Remove Item */}
+                                        <button
+                                            type="button"
+                                            onClick={() => handleRemoveItem(img.id)}
+                                            className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-red-600 transition hover:text-red-800"
+                                        >
+                                            <Trash2 size={15} />
+                                            <span>Remove Item</span>
+                                        </button>
                                     </li>
 
                                     {/* Price */}

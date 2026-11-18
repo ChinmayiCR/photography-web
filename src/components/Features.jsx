@@ -16,8 +16,8 @@ const categories = [
     },
     {
         title: "Pickles",
-        icon: <IconPickle />,
-        slug: "pickles",
+        icon: <IconPickle/>,
+        slug: "Pickles",
     },
     {
         title: "Chutney Powders",

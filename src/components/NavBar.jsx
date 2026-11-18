@@ -14,7 +14,7 @@ const NavBar = () => {
                 {navLinks.map((nav) => (
                         <li key={nav.id}
                             className="cursor-pointer text-[12px] font-medium uppercase tracking-[0.14em] text-[#403d38]">
-                            <HashLink smooth={true} to={`/#${nav.id}`} className="transition hover:text-[#6f7661]">{nav.title}</HashLink>
+                            <HashLink smooth={true} to={`/${nav.id}`} className="transition hover:text-[#6f7661]">{nav.title}</HashLink>
                         </li>
                     )
                 )}
@@ -31,7 +31,7 @@ const NavBar = () => {
                         {navLinks.map((nav) => (
                                 <li key={nav.id}
                                     className="mb-4 cursor-pointer text-sm font-medium uppercase tracking-[0.14em] text-[#403d38]">
-                                    <a href={`#${nav.id}`}>{nav.title}</a>
+                                    <a href={`${nav.id}`}>{nav.title}</a>
                                 </li>
                             )
                         )}
